@@ -1,0 +1,399 @@
+.textDetailCardDate{
+    width: 445px;
+    height: 24px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: rgba(42, 54, 71, 1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+}
+
+.textDetailCardPriority{
+    width: 445px;
+    height: 32px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: rgba(42, 54, 71, 1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+}
+
+.textDetailCardContacts{
+    width: 445px;
+    height: fit-content;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: rgba(42, 54, 71, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contactsDetailCard{
+    width: 445px;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.subtasksDetailCard{
+    width: 445px;
+    height: fit-content;
+    gap: 4px;
+}
+
+.contactsListCard{
+    width: 445px;
+    height: 56px;
+    border-radius: 10px;
+    padding: 7px 16px 7px 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.contactsListCard:hover{
+    background-color: rgba(238, 238, 238, 1);
+}
+
+.contactsListCard:focus-within{
+    background-color: rgba(9, 25, 49, 1);
+    color: white;
+}
+
+.subtasksListCard{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 32px;
+    padding: 6px 16px 6px 16px;
+    gap: 16px;
+    font-size: 16px;
+    line-height: 19.2px;
+    color: rgba(0, 0, 0, 1);
+    position: relative;
+}
+
+.subtasksListCard:hover{
+    border-radius: 10px;
+    height: 32px;
+    padding: 4px 16px 4px 16px;
+    background-color: rgba(238, 238, 238, 1);
+}
+
+.subtasksListCard:hover .checkboxRememberCard + .checkboxCard::before {
+    background-image: url("../assets/img/checkboxUncheckedHover.svg");
+}
+
+.subtasksListCard:hover .checkboxRememberCard:checked + .checkboxCard::before {
+    background-image: url("../assets/img/checkboxCheckedHover.svg");
+}
+
+.checkedBox{
+    background-image: url("../assets/img/checkboxCheckedHover.svg");
+}
+
+.uncheckedBox{
+    background-image: url("../assets/img/checkboxUncheckedHover.svg");
+}
+
+.dateDetailCard{
+    color: rgba(0, 0, 0, 1);
+}
+
+.contactsPriority{
+    width: 220px;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.priorityDetailCard{
+    width: 139px;
+    height: 32px;
+    border-radius: 32px;
+    padding: 4px 18px 4px 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.imgPriorityDetailCard{
+    height: 6.33px;
+    width: 17px;
+}
+
+.cardContact{
+    width: 32px;
+    height: 32px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color: rgba(255, 122, 0, 1);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+.cardContactPlus{
+    width: 32px;
+    height: 32px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 14.4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    position: relative;
+    left: -20px;
+}
+
+.yellow{
+    background-color: rgba(255, 122, 0, 1);
+}
+
+.blue{
+    background-color: blue;
+}
+
+.orange{
+    background-color: rgba(255, 122, 0, 1);
+}
+
+.leftPosition0{
+    left: 0px;
+}
+
+.leftPosition8{
+    left: -8px;
+}
+
+.leftPosition16{
+    left: -16px;
+}
+
+.leftPosition24{
+    left: -24px;
+}
+
+.leftPosition32{
+    left: -32px;
+}
+
+.leftPosition40{
+    left: -40px;
+}
+
+.leftPosition48{
+    left: -48px;
+}
+
+.cardContactDetailCard{
+    width: 42px;
+    height: 42px;
+    border: 2px solid white;
+    border-radius: 50%;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.nameContactDetailCard{
+    font-size: 19px;
+    line-height: 22.8px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.imgPrio{
+    width: 32px;
+    height: 32px;
+}
+
+.closeDetailCard{
+    width: 13.15px;
+    height: 13.15px;
+}
+
+.hoverCloseDetailCard:hover{
+    border-radius: 50%;
+    background-color: rgb(238, 238, 238);
+    cursor: pointer;
+}
+
+.overlapContacts{
+    background-color: blue;
+    position: relative;
+    left: -8px;
+}
+
+.cardContacts{
+    display: flex;
+    flex-direction: row;
+}
+
+.detailcardContacts{
+    display: flex;
+    flex-direction: column;
+}
+
+.detailCardTaskToDo{
+    width: 525px;
+    height: fit-content;
+    border-radius: 30px;
+    padding: 48px 40px 48px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 4px 0px rgba(0, 0, 0, 0.16);
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+}
+
+.centered-axis-xy {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.detailCardinsideContent{
+    left: 50%;
+}
+
+.detailCardoutsideContent{
+    left: 150%;
+}
+
+.checkboxCard{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  color: rgba(0, 0, 0, 1);
+  padding-left: 40px;
+}
+
+.checkboxRememberCard {
+    display: none;
+  }
+  
+.checkboxRememberCard + .checkboxCard::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url("../assets/img/checkboxUnchecked.svg");
+    background-size: cover;
+    position: absolute;
+    left: 16px;
+    top: 4px;
+    transition: background-image 0.1s;
+    cursor: pointer;
+  }
+  
+.checkboxRememberCard:checked + .checkboxCard::before {
+    background-image: url("../assets/img/checkboxChecked.svg");
+    cursor: pointer;
+}
+
+.deleteEditDetailCard{
+    width: 445px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.deleteDetailCard{
+    height: 24px;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.deleteDetailCard:hover .textDeleteCard{
+    font-weight: 700;
+    color: rgba(41, 171, 226, 1);
+}
+
+.editDetailCard{
+    height: 24px;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.editDetailCard:hover .textDeleteCard{
+    font-weight: 700;
+    color: rgba(41, 171, 226, 1);
+}
+
+.deleteDetailCard:hover .imgDetaildelete{
+    background-image: url("../assets/img/deleteHover.svg");
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+}
+
+.editDetailCard:hover .imgDetailedit{
+    background-image: url("../assets/img/editHover.svg");
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+}
+
+.textDeleteCard{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+    cursor: pointer;
+}
+
+.imgDetaildelete{
+    height: 19px;
+    width: 18px;
+    background-image: url("../assets/img/delete.svg");
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+}
+
+.imgDetailedit{
+    height: 18.25px;
+    width: 18.28px;
+    background-image: url("../assets/img/edit.svg");
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+}
+
+.vektorDetailCard{
+    height: 22px;
+    border: 1px solid rgba(209, 209, 209, 1);
+}
+
+.scrollbarColumn{
+  scrollbar-width: none;  /* Firefox */
+}
+

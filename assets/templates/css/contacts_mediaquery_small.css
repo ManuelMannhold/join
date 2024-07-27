@@ -1,0 +1,110 @@
+/*Media query*/
+
+@media (max-width: 320px) {
+    .contactEmail {
+      font-size: 14px;
+    }
+  
+    .addNewContactOverlay {
+      width: 280px;
+    }
+  
+    .leftOverlayContent {
+      width: 280px;
+    }
+  
+    .contactsOverlayHeadline {
+      font-size: 24px;
+      width: 150px;
+    }
+  
+    .contactsOverlaySubheadline {
+      width: 150px;
+      font-size: 18px;
+      margin-top: -15px;
+    }
+  
+    .overlayPersonContainer {
+      width: 60px;
+      height: 60px;
+      left: calc((100vw - 60px) / 2);
+      top: 320px;
+    }
+  
+    .overlayPersonLargeImg {
+      width: 60px;
+      height: 60px;
+      left: calc((100vw - 60px) / 2);
+      top: 320px;
+    }
+  
+    .overlayContactsInput {
+      width: 240px;
+      font-size: 16px;
+    }
+  
+    .overlayInputContainer {
+      width: 240px;
+    }
+  
+    .contactButtons {
+      width: 101px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  
+    .contactCreateButton {
+      font-size: 16px;
+      width: 202px;
+    }
+  
+    .whiteCloseOverlay {
+      right: calc((100vw - 280px) / 2);
+      left: 220px;
+    }
+  
+    .editContactOverlay {
+      width: 280px;
+    }
+  
+    .leftOverlayContentEdit {
+      width: 280px;
+    }
+  
+    .editOverlayHeadline {
+      font-size: 24px;
+      width: 150px;
+    }
+  
+    .overlayInitialsContainer {
+      width: 60px;
+      height: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 320px;
+    }
+  
+    .editInitials {
+      font-size: 24px;
+      top: 15px;
+      left: -15px;
+    }
+  
+    .editButtons {
+      width: 101px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  
+    .editButtonOverlay {
+      font-size: 16px;
+      width: 100px;
+    }
+  
+    .editDeleteButton {
+      font-size: 16px;
+      width: 100px;
+    }
+  }
+  

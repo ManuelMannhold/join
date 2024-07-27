@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: script.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: script.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const databaseURL =
+  "https://users-f61ab-default-rtdb.europe-west1.firebasedatabase.app/";
+
+/**
+ * Loads initial functionality upon page load.
+ * Calls `onloadDatabase()`, `loadDataFromLocalStorage()`, `showAnimation()`, and `getLoginName("")`.
+ */
+function onloadFunc() {
+  onloadDatabase();
+  loadDataFromLocalStorage();
+  showAnimation();
+  getLoginName("");
+}
+
+/**
+ * 
+ * Loads data from the specified path in the Firebase Realtime Database.
+ * @param {string} [path=""] - The path to load data from.
+ * @returns {Promise&lt;object>} A promise that resolves to the JSON response from the database.
+ */
+async function onloadDatabase(path = "") {
+  let response = await fetch(databaseURL + path + ".json");
+  let responseToJson = await response.json();
+  return responseToJson;
+}
+
+/**
+ * Initializes animation when the DOM content is fully loaded.
+ */
+document.addEventListener("DOMContentLoaded", function() {
+  const animatedLogo = document.getElementById("animatedLogo");
+  const contentMainpage = document.getElementById("contentMainpage");
+
+  animatedLogo.addEventListener("animationend", function () {
+    contentMainpage.classList.add("visibleMainpage");
+    contentMainpage.classList.remove("hiddenMainpage");
+  });
+});
+
+/**
+ * Redirects the user to the sign-up page.
+ */
+function redirectToSignUpPage() {
+  window.location.href = "./html/signup.html";
+}
+
+/**
+ * Redirects the user to the privacy policy page.
+ */
+function redirectToPrivacyPage() {
+  window.location.href = "./html/privacy_policy.html";
+}
+
+/**
+ * Redirects the user to the legal notice page.
+ */
+function redirectToLegalPage() {
+  window.location.href = "./html/legal_notice.html";
+}
+
+/**
+ * Redirects the user to the board page.
+ */
+function redirectToBoard() {
+  window.location.href = "./html/board.html";
+}
+
+/**
+ * Redirects the user to the summary page based on the window width.
+ * Calls `getLoginName(null)` before redirection.
+ */
+function redirectToSummary() {
+  getLoginName(null);
+  if (window.innerWidth > 1200)
+    window.location.href = "./html/summary.html";
+  else
+    window.location.href = "./html/greetingMobil.html";
+}
+
+/**
+ * Resets the login form if 'rememberMe' is not checked.
+ */
+function resetForm() {
+  if (!document.getElementById("rememberMe").checked) {
+    document.getElementById("loginEmailInput").value = "";
+    document.getElementById("loginPasswordInput").value = "";
+    document.getElementById("rememberMe").checked = false;
+  }
+}
+
+/**
+ * Resets the login form when the page is shown.
+ */
+window.addEventListener("pageshow", resetForm);
+
+/**
+ * Initializes form elements and event listeners for toggling password visibility.
+ */
+document.addEventListener("DOMContentLoaded", () => {
+  resetForm();
+  const passwordInput = document.getElementById("loginPasswordInput");
+  const lockIcon = document.getElementById("lockIcon");
+
+  // Event listener for the input event
+  passwordInput.addEventListener("input", handlePasswordInput);
+
+  // Event listener for clicking on the lock icon
+  lockIcon.addEventListener("click", handleLockIconClick);
+
+  // Function to update the lock icon based on password visibility
+  function updateLockIcon(passwordVisible) {
+    lockIcon.src = passwordVisible ? "./assets/img/visibility_on.svg" : "./assets/img/visibility_off.svg";
+    passwordInput.type = passwordVisible ? "text" : "password";
+  }
+
+  // Handler for the input event
+  function handlePasswordInput() {
+    if (passwordInput.value.length > 0) {
+      lockIcon.src = "./assets/img/visibility_off.svg";
+    } else {
+      lockIcon.src = "./assets/img/lockIcon.svg";
+    }
+  }
+
+  // Handler for clicking on the lock icon
+  function handleLockIconClick() {
+    passwordVisible = !passwordVisible;
+    updateLockIcon(passwordVisible);
+  }
+
+  // Initialize password visibility
+  let passwordVisible = false;
+  updateLockIcon(passwordVisible);
+});
+
+/**
+ * Initializes login button functionality.
+ */
+document.addEventListener("DOMContentLoaded", () => {
+  const loginButton = document.querySelector(".mainpageLoginButton");
+  loginButton.addEventListener("click", async () => {
+    const loginSuccess = await loginUser();
+    if (!loginSuccess) {
+      const errorMessage = document.getElementById("errorMessage");
+      const passwordInput = document.getElementById("loginPasswordInput");
+      errorMessage.style.display = "block";
+      passwordInput.classList.add("error");
+    }
+  });
+});
+
+/**
+ * 
+ * Attempts to log in the user based on entered credentials.
+ * @returns {boolean} True if login is successful, otherwise false.
+ */
+async function loginUser() {
+  let email = getEmailInputValue();
+  let password = getPasswordInputValue();
+  try {
+    let usersData = await fetchUserData();
+    let user = findUser(usersData, email, password);
+
+    if (user) {
+      handleSuccessfulLogin(user);
+      return true;
+    }
+  } catch (error) {
+    handleLoginError(error);
+  }
+}
+
+/**
+ * 
+ * Retrieves the value of the email input field.
+ * @returns {string} The value of the email input.
+ */
+function getEmailInputValue() {
+  return document.getElementById("loginEmailInput").value;
+}
+
+/**
+ * 
+ * Retrieves the value of the password input field.
+ * @returns {string} The value of the password input.
+ */
+function getPasswordInputValue() {
+  return document.getElementById("loginPasswordInput").value;
+}
+
+/**
+ * 
+ * Fetches user data from the 'users' database table.
+ * @returns {Promise&lt;object>} A promise that resolves to the user data object.
+ */
+async function fetchUserData() {
+  return await onloadDatabase("users");
+}
+
+/**
+ * 
+ * Finds a user in the provided user data array based on email and password.
+ * @param {object} usersData - The user data object to search in.
+ * @param {string} email - The email of the user to find.
+ * @param {string} password - The password of the user to find.
+ * @returns {object | undefined} The user object if found, otherwise undefined.
+ */
+function findUser(usersData, email, password) {
+  return Object.values(usersData).find(
+    (u) => u.email === email &amp;&amp; u.password === password
+  );
+}
+
+/**
+ * 
+ * Handles actions upon successful user login.
+ * Calls `getLoginName(user.name)` and redirects to the summary page.
+ * @param {object} user - The user object containing user details.
+ */
+function handleSuccessfulLogin(user) {
+  getLoginName(user.name);
+  window.location.href = "./html/summary.html";
+}
+
+/**
+ * 
+ * Handles errors that occur during login.
+ * @param {Error} error - The error object representing the login error.
+ */
+function handleLoginError(error) {
+  console.error("Error fetching user data:", error);
+}
+
+/**
+ * Saves login credentials to local storage if 'rememberMe' is checked.
+ */
+document.querySelector("form").addEventListener("submit", function (event) {
+  if (document.getElementById("rememberMe").checked) {
+    localStorage.setItem(
+      "username",
+      document.getElementById("loginEmailInput").value
+    );
+    localStorage.setItem(
+      "pass",
+      document.getElementById("loginPasswordInput").value
+    );
+  }
+  event.preventDefault();
+});
+
+/**
+ * Loads login credentials from local storage and populates the login form if 'rememberMe' is enabled.
+ */
+function loadDataFromLocalStorage() {
+  let email = localStorage.getItem("username");
+  let password = localStorage.getItem("pass");
+  let rememberMe = localStorage.getItem("rememberMe");
+
+  if (rememberMe === "true" &amp;&amp; email &amp;&amp; password) {
+    document.getElementById("loginEmailInput").value = email;
+    document.getElementById("loginPasswordInput").value = password;
+    document.getElementById("rememberMe").checked = true;
+  }
+}
+
+/**
+ * Saves 'rememberMe' state to local storage when the checkbox is clicked.
+ */
+document.getElementById("rememberMe").addEventListener("click", function() {
+  const rememberMe = this.checked;
+
+  localStorage.setItem("rememberMe", rememberMe);
+  if (rememberMe) {
+    localStorage.setItem("username", document.getElementById("loginEmailInput").value);
+    localStorage.setItem("pass", document.getElementById("loginPasswordInput").value);
+  } else {
+    localStorage.removeItem("username");
+    localStorage.removeItem("pass");
+  }
+});
+
+/**
+ * Shows animation based on media query.
+ */
+function showAnimation() {
+  const bodyAnimation = document.getElementById("contentMainpage");
+  const img = document.getElementById("animatedLogo");
+  const mediaQuery = window.matchMedia("(max-width: 670px)");
+
+  if (mediaQuery.matches) {
+    handleSmallScreenAnimation(bodyAnimation, img);
+  } else {
+    handleLargeScreenAnimation(bodyAnimation);
+  }
+
+  img.style.animation = "slide-tl 1s forwards";
+  addAnimationEndListener(img);
+}
+
+/**
+ * 
+ * Handles animation for small screen sizes.
+ * @param {HTMLElement} bodyAnimation - The main content element.
+ * @param {HTMLElement} img - The animated logo element.
+ */
+function handleSmallScreenAnimation(bodyAnimation, img) {
+  setTimeout(() => {
+    bodyAnimation.style.display = "none";
+  }, 0);
+  setTimeout(() => {
+    document.body.style.backgroundColor = "#2b3646";
+    img.src = "./assets/img/whiteLogoLarge.svg";
+  }, 10);
+  setTimeout(() => {
+    document.body.style.backgroundColor = "#f6f7f8";
+    img.src = "./assets/img/logoLarge.svg";
+    bodyAnimation.style.display = "block";
+  }, 500);
+}
+
+/**
+ * 
+ * Handles animation for large screen sizes.
+ * @param {HTMLElement} bodyAnimation - The main content element.
+ */
+function handleLargeScreenAnimation(bodyAnimation) {
+  setTimeout(() => {
+    bodyAnimation.style.display = "none";
+  }, 0);
+  setTimeout(() => {
+    bodyAnimation.style.display = "block";
+  }, 500);
+}
+
+/**
+ * 
+ * Adds animation end listener to the animated logo element.
+ * @param {HTMLElement} img - The animated logo element.
+ */
+function addAnimationEndListener(img) {
+  img.addEventListener("animationend", () => {
+    const contentMainpage = document.getElementById("contentMainpage");
+    contentMainpage.classList.add("visibleMainpage");
+    contentMainpage.classList.remove("hiddenMainpage");
+  });
+}
+
+/**
+ * 
+ * Returns the login name.
+ * @returns {string} The login name.
+ */
+function defineLoginName() {
+  return loginName; // Assuming loginName is defined elsewhere in your code.
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addAnimationEndListener">addAnimationEndListener</a></li><li><a href="global.html#defineLoginName">defineLoginName</a></li><li><a href="global.html#fetchUserData">fetchUserData</a></li><li><a href="global.html#findUser">findUser</a></li><li><a href="global.html#getEmailInputValue">getEmailInputValue</a></li><li><a href="global.html#getPasswordInputValue">getPasswordInputValue</a></li><li><a href="global.html#handleLargeScreenAnimation">handleLargeScreenAnimation</a></li><li><a href="global.html#handleLoginError">handleLoginError</a></li><li><a href="global.html#handleSmallScreenAnimation">handleSmallScreenAnimation</a></li><li><a href="global.html#handleSuccessfulLogin">handleSuccessfulLogin</a></li><li><a href="global.html#loadDataFromLocalStorage">loadDataFromLocalStorage</a></li><li><a href="global.html#loginUser">loginUser</a></li><li><a href="global.html#onloadDatabase">onloadDatabase</a></li><li><a href="global.html#onloadFunc">onloadFunc</a></li><li><a href="global.html#redirectToBoard">redirectToBoard</a></li><li><a href="global.html#redirectToLegalPage">redirectToLegalPage</a></li><li><a href="global.html#redirectToPrivacyPage">redirectToPrivacyPage</a></li><li><a href="global.html#redirectToSignUpPage">redirectToSignUpPage</a></li><li><a href="global.html#redirectToSummary">redirectToSummary</a></li><li><a href="global.html#resetForm">resetForm</a></li><li><a href="global.html#showAnimation">showAnimation</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.3</a> on Wed Jul 17 2024 20:57:29 GMT+0200 (Mitteleuropäische Sommerzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

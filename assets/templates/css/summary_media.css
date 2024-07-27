@@ -1,0 +1,215 @@
+@media (max-width: 1440px) {
+    .summaryText {
+        padding-left: calc((100vw - 893px) / 2);
+    }
+
+    #titleSummary{
+        padding-left: calc((100vw - 893px) / 2);
+    }
+}
+
+@media(max-width: 1400px)
+{
+    .summaryText{
+        margin-bottom: 90px;
+    }
+}
+
+@media (max-width: 1200px){
+    #textRegards{
+        display: none;
+    }
+
+    .summaryText {
+        padding-left: calc((100vw - 560px) / 2);
+    }
+
+    #titleSummary{
+        padding-left: calc((100vw - 560px) / 2);
+        padding-top: calc(128px - 96px);
+        flex-direction: column;
+        align-items: baseline;
+        gap: 16px;
+    }
+
+    .vektorTextSummary{
+        flex-direction: column-reverse;
+        gap: 16px;
+        align-items: baseline;
+    }
+
+    .summaryTitleVektor{
+        width: 90px;
+        height: 3px;
+    }
+}
+
+@media (max-width: 780px) {
+    .summaryTitle{
+        font-size: 47px;
+        line-height: 56.4px;
+    }
+
+    .summaryTitleText{
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .summaryToDO{
+        width: 186px;
+        height: 110px;
+        gap: 10px;
+    }
+
+    .summaryDoneImg{
+        width: 40px;
+        height: 40px;
+    }
+
+    .summaryNumber{
+        font-size: 47px;
+        line-height: 56.4px;
+    }
+
+    .summaryTaskText{
+        font-size: 14px;
+        line-height: 16.8px;
+    }
+
+    .summaryUrgentImg{
+        width: 40px;
+        height: 40px;
+    }
+
+    .summaryDate{
+        font-size: 16px;
+        line-height: 19.2px;
+    }
+
+    .timeLine{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 396px;
+        height: 110px;
+        padding: 28px 0px 28px 0px;
+        gap: 20px;
+    }
+
+    .timeLineVektor{
+        height: 68px;
+    }
+
+    .summarySeparateTasks{
+        width: 116px;
+        height: 116px;
+    }
+
+    .summaryText{
+        padding-top: calc(272px - 147px - 80px);
+    }
+
+    .summaryText {
+        padding-left: calc((100vw - 396px) / 2);
+    }
+
+    #titleSummary{
+        padding-left: calc((100vw - 396px) / 2);
+    }
+}
+
+@media (max-width: 419px) {
+    .summaryTitle{
+        font-size: 40px;
+        line-height: 56.4px;
+    }
+
+    .summaryTitleText{
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .summaryToDO{
+        width: 140px;
+        height: 100px;
+        gap: 10px;
+    }
+
+    .summaryDoneImg{
+        width: 40px;
+        height: 40px;
+    }
+
+    .summaryNumber{
+        font-size: 40px;
+        line-height: 56.4px;
+    }
+
+    .summaryTaskText{
+        font-size: 10px;
+        line-height: 16.8px;
+    }
+
+    .timeLineDateNumber{
+        font-size: 18px;
+    }
+
+    .timeLineDateText{
+        font-size: 14px;
+    }
+
+    .summaryUrgentImg{
+        width: 40px;
+        height: 40px;
+    }
+
+    .summaryDate{
+        font-size: 16px;
+        line-height: 19.2px;
+    }
+
+    .timeLine{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 300px;
+        height: 110px;
+        padding: 28px 0px 28px 0px;
+        gap: 20px;
+    }
+
+    .timeLineVektor{
+        height: 68px;
+    }
+
+    .summarySeparateTasks{
+        width: 90px;
+        height: 90px;
+    }
+
+    .summaryText{
+        padding-top: calc(272px - 147px - 80px);
+    }
+
+    .summaryText {
+        padding-left: calc((100vw - 300px) / 2);
+        padding-top: 8px;
+    }
+
+    #titleSummary{
+        padding-left: calc((100vw - 300px) / 2);
+        padding-top: 8px;
+        gap: 8px;
+    }
+}
+
+@media((min-width: 1401px) and (max-height: 890px)){
+    .summaryText{
+        overflow-y: auto;
+        height: calc(100vh - 180px);
+    }
+
+    #titleSummary{
+        padding-top: calc(206px - 190px);
+    }
+}

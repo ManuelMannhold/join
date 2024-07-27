@@ -1,0 +1,59 @@
+/*Privacy buttons*/
+
+.legalButtonsContainer {
+    display: flex;
+    gap: 16px;
+    margin-top: 100px;
+    position: absolute;
+    bottom: 40px;
+    left: 42%;
+  }
+  
+  .legalButtonLeft {
+    display: flex;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    color: #a8a8a8;
+    text-align: left;
+    background: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 121px;
+    height: 35px;
+    padding: 8px 0px 0px 0px;
+    gap: 8px;
+  }
+  
+  .legalButtonRight {
+    display: flex;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    color: #a8a8a8;
+    text-align: left;
+    background: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 109px;
+    height: 35px;
+    left: 137px;
+    padding: 8px 0px 0px 0px;
+    gap: 8px;
+  }
+  
+  .legalButtonRight:hover {
+    color: #29abe2;
+    font-weight: 700;
+  }
+  
+  .legalButtonLeft:hover {
+    color: #29abe2;
+    font-weight: 700;
+  }

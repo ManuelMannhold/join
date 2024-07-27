@@ -1,0 +1,241 @@
+@media(width >= 1400px) {
+    body {
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 1400px) {
+    .headerFrame{
+        left: calc((100vw - 1207px) / 2);
+    }
+
+    .contentFrame{
+        left: calc((100vw - 1207px) / 2);
+    }
+    .columnBoard{
+        max-height: calc(100vh - 410px);
+    }
+}
+
+@media (min-width: 1201px)
+{
+    #searchMobil{
+        display: none;
+    }
+
+    #addTaskMobil{
+        display: none;
+    }
+
+    .mobilBoardTaskTitles{
+        display: none;
+    }
+}
+
+@media (max-width: 1200px){
+    .width440{
+        width: 240px;
+    }
+    
+    .contentFrame{
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: auto;
+        width: calc(100vw - 8px);
+        padding: 0px 16px 60px 16px;
+        left: 0;
+        scrollbar-width: none;
+    }
+
+    .columnBoard{
+        /* white-space: nowrap; */
+        padding-bottom: 20px;
+        height: auto;
+        overflow-y: hidden;
+        overflow-x: auto;
+        flex-direction: row;
+        min-height: unset;
+        margin-bottom: 8px;
+    }
+
+    .headerFrame{
+        width: calc(100vw - 32px);
+        padding: 0px 16px 0px 16px;
+        left: 0;
+    }
+
+    .titleSearch{
+        width: calc(100vw - 32px);
+        padding: 0px 16px 0px 16px;
+        left: 0;
+        top: calc(128px - 80px);
+    }
+
+    .headersTable{
+        display: none;
+    }
+
+    #searchMobil{
+        display: block;
+    }
+
+    #searchDesktop{
+        display: none;
+    }
+
+    #searchMobil{
+        position: relative;
+        left: 16px;
+        top: calc(224px - 80px - 73px);
+        width: 396px;
+    }
+
+    .formSearch{
+        width: 364px;
+    }
+
+    #addTaskMobil{
+        display: block;
+    }
+
+    #addTaskDesktop{
+        display: none;
+    }
+
+    .addTask{
+        width: 40px;
+        height: 40px;
+        padding: 3px;
+    }
+
+    .mobilBoardTaskTitles{
+        display: flex !important;
+        padding-left: 16px;
+        /* width: 396px; */
+    }
+}
+
+@media (max-width: 780px) {
+    .detailCardTaskToDo{
+        width: 396px;
+        padding: 32px 24px 32px 24px;
+        gap: 16px;
+    }
+
+    .labelClose {
+        width: 348px;
+        height: 32px;
+    }
+
+    .labelDetailCard {
+        height: 27px;
+        padding: 4px 16px 4px 16px;
+    }
+
+    .textDetailCardTitle {
+        width: 348px;
+        font-size: 36px;
+        line-height: 43.2px;
+    }
+
+    .textDetailCardContent {
+        width: 348px;
+        font-size: 16px;
+        line-height: 19.2px;
+    }
+
+    .textDetailCardDate {
+        width: 348px;
+        font-size: 16px;
+        line-height: 19.2px;
+    }
+
+    .textDetailCardPriority {
+        width: 348px;
+        font-size: 16px;
+        line-height: 19.2px;
+    }
+
+    .textDetailCardContacts {
+        width: 348px;
+        font-size: 16px;
+        line-height: 19.2px;
+    }
+
+    .contactsDetailCard {
+        width: 348px;
+    }
+
+    .contactsListCard {
+        width: 348px;
+    }
+
+    .nameContactDetailCard {
+        font-size: 16px;
+        line-height: 19.2px;
+    }
+
+    .subtasksDetailCard {
+        width: 348px;
+    }
+
+    .deleteEditDetailCard {
+        width: 348px;
+    }
+}
+
+@media (max-width: 459px){
+    #searchMobil{
+        width: 240px;
+    }
+
+    .inputSearch{
+        width: 170px;
+    }
+
+    .formSearch{
+        width: auto;
+    }
+
+    .detailCardTaskToDo {
+        width: 270px;
+    }
+
+    .deleteEditDetailCard {
+        width: 270px;
+    }
+
+    .textDetailCardTitle {
+        width: 220px;
+        font-size: 30px;
+    }
+
+    .textDetailCardContent{
+        width: 220px;
+    }
+
+    .labelClose {
+        width: 230px;
+        height: 34px;
+    }
+
+    .deleteEditDetailCard {
+        width: 230px;
+    }
+
+    .contactsDetailCard {
+        width: 200px;
+    }
+    
+    .contactsListCard{
+        width: 200px;
+    }
+}
+
+@media (max-width: 330px){
+    .TasksToDo{
+        width: 240px;
+    }
+}

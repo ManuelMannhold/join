@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add_Task</title>
+    <link rel="shortcut icon" href="../assets/img/logoLarge.png" type="image/x-icon">
+    <link rel="stylesheet" href="../fonts.css">
+    <link rel="stylesheet" href="../assets/templates/templates.css">
+    <link rel="stylesheet" href="../css/add_task.css">
+    <link rel="stylesheet" href="../css/add_task_2.css">
+    <link rel="stylesheet" href="../assets/templates/css/add_task_mediaqueries.css">
+    <script src="../js/add_task.js"></script>
+    <script src="../js/add_task_2.js"></script>
+    <script src="../js/add_task_3.js"></script>
+    <script src="../assets/templates/js/add_task_template.js"></script>
+    <script src="../assets/templates/template.js"></script>
+    <script src="../js/summary.js"></script>
+    <script src="../assets/templates/js/board_templates.js"></script>
+</head>
+
+<body onload="init()">
+    <div w3-include-html="../assets/templates/template.html"></div>
+    <div class="container  m-left-328">
+        <div class="head">
+            <h1>Add Task</h1>
+        </div>
+        <section id="content">
+            <div class="content-left">
+                <form class="flex8gap" onsubmit="addTask(); return false">
+                    <label for="input-title">Title<span class="span-star">*</span></label>
+                    <input type="text" id="input-title" placeholder="Enter a Title" required>
+                    <span id="error-message-title" class="error-message">Field required</span>
+                </form>
+                <div class="flex8gap">
+                    <label for="input-description">Description</label>
+                    <textarea name="input-description" id="input-description"
+                        placeholder="Enter a Description"></textarea>
+                </div>
+                <div class="flex8gap">
+                    <label for="input-assigny">Assigned to</label>
+                    <div class="input-container-contacts" onclick="ifIsListContactsLoaded(event, 1)">
+                        <input list="input-assigned" id="input-assigny" class="dropbtn"
+                            placeholder="Select contacts to assign">
+                        <button class="add-button" id="add-button-contacts"
+                            onclick="ifIsListContactsLoaded(event, 1)">+</button>
+                        <div id="show-contacts" class="d-none">
+                        </div>
+                    </div>
+                </div>
+                <div id="display-initials" class="d-none"></div>
+            </div>
+
+            <div class="seperator" id="seperator-content"></div>
+
+            <div class="content-right flex24gap">
+                <form class="flex8gap" onsubmit="addTask(); return false">
+                    <label for="input-date">Due Date<span class="span-star">*</span></label>
+                    <input id="input-date" type="date" required>
+                    <span id="error-message-date" class="error-message">Field required</span>
+                </form>
+                <div class="flex8gap">
+                    <label>Prio</label>
+                    <div class="input-prio-span">
+                        <div id="input-prio1" onclick="changePrioButtonUrgent()" class="urgent-image btn"></div>
+                        <div id="input-prio2" onclick="changePrioButtonMedium()" class="medium-image btn"></div>
+                        <div id="input-prio3" onclick="changePrioButtonLow()" class="low-image btn"></div>
+                    </div>
+                </div>
+                <form class="flex8gap" onsubmit="addTask(); return false">
+                    <label for="input-category">Category<span class="span-star">*</span></label>
+                    <div class="input-categorie-container" onclick="showCategorie(event, 1)">
+                        <input id="input-category" required placeholder="Select task category">
+                        <img class="input-categorie-arrow-down" id="input-categorie-image-down"
+                            src="../assets/img/arrow_drop_down.svg" alt="" onclick="showCategorie(event, 1)">
+                        <img src="../assets/img/arrow_drop_down_up.svg" id="input-categorie-image-up"
+                            onclick="closeCategorie(event, 1)" class="d-none" alt="">
+                    </div>
+                    <div id="display-categorie" class="d-none"></div>
+                    <span id="error-message-category" class="error-message">Field required</span>
+                </form>
+                <div class="flex8gap">
+                    <label for="input-subtask">Subtasks</label>
+                    <div class="input-container">
+                        <input type="text" id="input-subtask" placeholder="Add new subtask"><button class="add-button"
+                            id="add-button-subtask" onclick="addSubTask()">+</button>
+                            <span id="error-message-subtasks" class="error-message">please fill in</span>
+                    </div>
+                    <div id="show-subtask">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="footer">
+            <div class="required-field-footer">
+                <span class="span-star">*</span>
+                <span>This field is required</span>
+            </div>
+            <div class="button-footer">
+                <button class="btn-footer-clear btn" onclick="clearInputs()" id="btn-clear">Clear x</button>
+                <button class="btn-footer-create btn" onclick="addTask()">Create Task
+                    <img src="../assets/img/check.svg" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="pop-up-task d-none" id="add_task">
+        <div class="overlay-create-task" id="overlay-task">
+            <p>Task added to Board</p><img src="../assets/img/imgBoard.png">
+        </div>
+    </div>
+</body>
+
+</html>

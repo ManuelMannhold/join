@@ -1,0 +1,406 @@
+body{
+    overflow-y: auto;
+}
+
+.headerFrame{
+    position: relative;
+    left: 232px;
+    height: 232px;
+    width: 1208px;
+}
+
+.contentFrame{
+    padding-left: 232px;
+    height: fit-content;
+    width: 1208px;
+    padding: 0px 51px 0px 51px;
+    display: flex;
+    position: relative;
+    left: 232px; 
+    top: calc(336px - 232px - 96px - 13px);
+}
+
+.titleSearch{
+    width: 1056px;
+    height: 73px;
+    padding-left: 64px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 79.5px;
+}
+
+.titleBoard{
+    font-weight: 700;
+    font-size: 61px;
+    width: 50%;
+}
+
+.findAddTask{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 50%;
+    gap: 32px;
+}
+
+.search-container{
+    width: 312px;
+    height: 48px;
+    border-radius: 10px;
+    border: 1px solid #a8a8a8;
+    padding: 8px 16px 8px 16px;
+    background-color: white;
+}
+
+.search-container:focus-within {
+    border: 1px solid rgba(41, 171, 226, 1);
+  }
+
+.formSearch{
+    width: 280px;
+    height: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 0;
+    align-items: center;
+}
+
+.inputSearch{
+    border: 0;
+    width: 228px;
+    cursor: pointer;
+    color: black;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    outline: none;
+    height: 40px;
+}
+
+.borderBlue{
+  border: 1px solid #29abe2 !important;
+  outline: none;
+}
+
+input::placeholder{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #d1d1d1;
+    font-family: 'inter';
+}
+
+.boxSearch{
+    height: 32px;
+    width: 48px;
+    gap: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.vektorSearch{
+    height: 31px;
+    width: 0;
+    border: 1px solid #d1d1d1;
+}
+
+.widthSearch{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    cursor: pointer;
+}
+
+.widthAdd{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.widthSearch:hover{
+    background-color: rgb(238, 238, 238);
+}
+
+.buttonSearch{
+    width: 17.58px;
+    height: 17.58px;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addTask{
+    width: 160px;
+    height: 48px;
+    border-radius: 10px;
+    background-color: #2a3647;
+    border: 1px solid #2a3647;
+    padding: 8px 16px 8px 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: white;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 25.2px;
+    cursor: pointer;
+}
+
+.addTask:hover{
+    background-color: rgba(41, 171, 226, 1);
+    border: 1px solid rgba(41, 171, 226, 1);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.imgAdd{
+    width: 18.67px;
+    height: 18.67px;
+}
+
+.widthTitelAdd{
+    width: 92px;
+    height: 24px;
+}
+
+.headersTable{
+    width: 1208px;
+    height: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 64px 0px 64px;
+    position: relative;
+    top: calc(200.5px - 73px);
+}
+
+.boardColumn{
+    width: 244px;
+    height: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titleBoardColumn{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #42526e;
+}
+
+.addBoardColumn{
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    border: 2px solid #2a3647;
+    padding: 3px;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f7f8;
+    cursor: pointer;
+}
+
+.plus{
+    font-weight: bold;
+    color: #2a3647; /* Farbe des Symbols */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addBoardColumn:hover .plus{
+    color: rgba(41, 171, 226, 1);
+}
+
+.addBoardColumn:hover{
+    border: 2px solid rgba(41, 171, 226, 1);
+}
+
+.columnBoard{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    gap: 24px;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-top: 13px;
+    max-height: calc(100vh - 324px);
+}
+
+.noTasksToDo{
+    width: 246px;
+    height: 48px;
+    border-radius: 10px;
+    border: 1px dashed #a8a8a8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(231, 231, 231, 1);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.16);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+    color: rgba(168, 168, 168, 1);
+}
+
+.TasksToDo{
+    width: 252px;
+    height: fit-content;
+    border-radius: 24px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+.TasksToDo:hover{
+    rotate: 5deg;
+}
+
+.labelClose{
+    width: 445px;
+    height: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.labelCard{
+    height: 27px;
+    width: fit-content;
+    padding: 4px 16px 4px 16px;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.labelCard-blue{
+    background-color: rgba(0, 56, 255, 1);
+}
+
+.labelCard-green{
+    background-color: rgba(31, 215, 193, 1);
+}
+
+.labelDetailCard{
+    height: 36px;
+    width: fit-content;
+    align-items: center;
+    padding: 4px 24px 4px 24px;
+    border-radius: 8px;
+    display: flex;
+    gap: 10px;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 27.6px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.textCard{
+    width: 220px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.textCardTitle{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19.2px;
+    color: rgba(42, 54, 71, 1);
+}
+
+.textDetailCardTitle{
+    width: 445px;
+    height: fit-content;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 73.2px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.textCardContent{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+    color: rgba(168, 168, 168, 1);
+}
+
+.textDetailCardContent{
+    width: 445px;
+    height: fit-content;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.textCardProgress{
+    width: 220px;
+    height: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.textProgress{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 19.2px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.progressBar{
+    width: 128px;
+    height: 8px;
+    display: flex;
+    gap: 10px;
+    border-radius: 8px;
+    background-color: rgba(244, 244, 244, 1);
+}
+
+.progressBarLine{
+    width: 64px;
+    height: 8px;
+    border-radius: 16px;
+    background-color: rgba(69, 137, 255, 1);
+}
+
+
+
+
+

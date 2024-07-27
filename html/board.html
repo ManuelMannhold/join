@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board</title>
+    <link rel="stylesheet" href="../assets/templates/templates.css">
+    <link rel="stylesheet" href="../fonts.css">
+    <link rel="stylesheet" href="../css/board.css">
+    <link rel="stylesheet" href="../css/board_2.css">
+    <link rel="stylesheet" href="../css/board_3.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/add_task.css">
+    <link rel="stylesheet" href="../css/add_task_2.css">
+    <link rel="stylesheet" href="../assets/templates/css/add_task_board_mediaquerries.css">
+    <link rel="stylesheet" href="../assets/templates/css/board_mediaquerries.css">
+    <script src="../js/board.js"></script>
+    <script src="../js/board_2.js"></script>
+    <script src="../js/add_task_2.js"></script>
+    <script src="../js/add_task_3.js"></script>
+    <script src="../assets/templates/template.js"></script>
+    <script src="../js/summary.js"></script>
+    <script src="../assets/templates/js/board_templates.js"></script>
+    <script src="../js/add_task_board.js"></script>
+    <script src="../assets/templates/js/add_task_template.js"></script>
+    <script src="../js/add_task.js"></script>
+    <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+</head>
+
+<body onload="boardInit()">
+    <div w3-include-html="../assets/templates/template.html"></div>
+    <section class="headerFrame">
+        <div class="titleSearch">
+            <div class="titleBoard">Board</div>
+            <div id="addTaskMobil" class="findAddTask" onclick="initBoard()">
+                <button class="addTask">
+                    <div class="widthAdd"><img class="imgAdd" src="../assets/img/add.png" alt=""></div>
+                </button>
+            </div>
+            <div id="addTaskDesktop" class="findAddTask">
+                <div id="searchDesktop" class="search-container">
+                    <form class="formSearch">
+                        <input id="searchTaskDesktop" class="inputSearch" type="text" placeholder="Find Task"
+                            name="search" oninput="searchTasks()">
+                        <div class="boxSearch">
+                            <div class="vektorSearch"></div>
+                            <div class="widthSearch">
+                                <img class="buttonSearch" src="../assets/img/search.png" alt="" onclick="foundTask()">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <button class="addTask" onclick="initBoard()">
+                    <div class="widthTitelAdd">Add task</div>
+                    <div class="widthAdd"><img class="imgAdd" src="../assets/img/add.png" alt=""></div>
+                </button>
+            </div>
+        </div>
+        <div id="searchMobil" class="search-container">
+            <form class="formSearch">
+                <input id="searchTaskMobil" class="inputSearch" type="text" placeholder="Find Task" name="search"
+                    oninput="searchTasks()">
+                <div class="boxSearch">
+                    <div class="vektorSearch"></div>
+                    <div class="widthSearch">
+                        <img class="buttonSearch" src="../assets/img/search.png" alt="" onclick="foundTask()">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="headersTable">
+            <div class="boardColumn">
+                <div class="titleBoardColumn">To do</div>
+                <button class="addBoardColumn" onclick="initBoard(0)">
+                    <div class="plus">+</div>
+                </button>
+            </div>
+            <div class="boardColumn">
+                <div class="titleBoardColumn">In progress</div>
+                <button class="addBoardColumn" onclick="initBoard(1)">
+                    <div class="plus">+</div>
+                </button>
+            </div>
+            <div class="boardColumn">
+                <div class="titleBoardColumn">Await feedback</div>
+                <button class="addBoardColumn" onclick="initBoard(2)">
+                    <div class="plus">+</div>
+                </button>
+            </div>
+            <div class="boardColumn">
+                <div class="titleBoardColumn">Done</div>
+            </div>
+        </div>
+    </section>
+    <section class="contentFrame">
+        <div class="boardColumn mobilBoardTaskTitles">
+            <div class="titleBoardColumn">To do</div>
+            <button class="addBoardColumn" onclick="initBoard(0)">
+                <div class="plus">+</div>
+            </button>
+        </div>
+        <div id="toDO" ondrop="drop(0)" ondragover="allowDrop(event)" class="columnBoard scrollbarColumn"></div>
+        <div class="boardColumn mobilBoardTaskTitles">
+            <div class="titleBoardColumn">In progress</div>
+            <button class="addBoardColumn" onclick="initBoard(1)">
+                <div class="plus">+</div>
+            </button>
+        </div>
+        <div id="inProgress" ondrop="drop(1)" ondragover="allowDrop(event)" class="columnBoard scrollbarColumn"></div>
+        <div class="boardColumn mobilBoardTaskTitles">
+            <div class="titleBoardColumn">Await feedback</div>
+            <button class="addBoardColumn"  onclick="initBoard(2)">
+                <div class="plus">+</div>
+            </button>
+        </div>
+        <div id="awaitFeedback" ondrop="drop(2)" ondragover="allowDrop(event)" class="columnBoard scrollbarColumn">
+        </div>
+        <div class="boardColumn mobilBoardTaskTitles">
+            <div class="titleBoardColumn">Done</div>
+        </div>
+        <div id="done" ondrop="drop(3)" ondragover="allowDrop(event)" class="columnBoard scrollbarColumn"></div>
+    </section>
+    <section id="idDetailCard" class="containerDetailCard d-none">
+    </section>
+
+    <!-----------------add_task_board------------------>
+    <section id="idEditCard" class="containerDetailCard d-none leftPart">
+        <div class="container-board-addTask d-none" id="container-add-task-board">
+            <div class="header-addTask">
+                <h1 class="headline">Add Task</h1>
+                <div id="close-button-addTask" onclick="closeAddTaskBoard()">
+                    <img src="../assets/img/close.png" alt="">
+                </div>
+            </div>
+            <section id="content-addTask">
+                <div class="content-left content-left-padding">
+                    <form class="flex8gap" onsubmit="addTask(); return false">
+                        <label for="input-title">Title<span class="span-star width440">*</span></label>
+                        <input type="text" id="input-title" class="widthInputAddTask" placeholder="Enter a Title" required>
+                        <span id="error-message-title" class="error-message">Field required</span>
+                    </form>
+                    <div class="flex8gap">
+                        <label for="input-description" class="width440">Description</label>
+                        <textarea name="input-description" id="input-description" class="widthInputAddTask"
+                            placeholder="Enter a Description"></textarea>
+                    </div>
+                    <div class="flex8gap">
+                        <label for="input-assigny" class="width440">Assigned to</label>
+                        <div class="input-container-contacts" onclick="ifIsListContactsLoaded(event, 1, 1)">
+                            <input list="input-assigned" id="input-assigny" class="dropbtn widthInputAddTask"
+                                placeholder="Select contacts to assign">
+                            <button class="add-button" id="add-button-contacts"
+                                onclick="ifIsListContactsLoaded(event, 1, 1)">+</button>
+                            <div id="show-contacts" class="d-none">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="display-initials" class="d-none flexContainer"></div>
+                </div>
+    
+                <div class="seperator content-top-padding" id="seperator-content"></div>
+    
+                <div class="content-right flex24gap content-right-padding">
+                    <form class="flex8gap" onsubmit="addTask(); return false">
+                        <label for="input-date">Due Date<span class="span-star">*</span></label>
+                        <input id="input-date" type="date" required>
+                        <span id="error-message-date" class="error-message">Field required</span>
+                    </form>
+                    <div class="flex8gap">
+                        <label>Prio</label>
+                        <div class="input-prio-span">
+                            <div id="input-prio1" onclick="changePrioButtonUrgent()" class="urgent-image btn"></div>
+                            <div id="input-prio2" onclick="changePrioButtonMedium()" class="medium-image btn"></div>
+                            <div id="input-prio3" onclick="changePrioButtonLow()" class="low-image btn"></div>
+                        </div>
+                    </div>
+                    <form class="flex8gap" onsubmit="addTask(); return false">
+                        <label for="input-category">Category<span class="span-star">*</span></label>
+                        <div class="input-categorie-container input-categorie-container-board" onclick="showCategorie(event, 1)">
+                            <input id="input-category" required class="widthInputAddTask">
+                            <img class="input-categorie-arrow-down" id="input-categorie-image-down"
+                                src="../assets/img/arrow_drop_down.svg" alt="" onclick="showCategorie(event, 1)">
+                            <img src="../assets/img/arrow_drop_down_up.svg" id="input-categorie-image-up"
+                                onclick="closeCategorie(event, 1)" class="d-none" alt="">
+                        </div>
+                        <div id="display-categorie" class="d-none display-categorie-board"></div>
+                        <span id="error-message-category" class="error-message">Field required</span>
+                    </form>
+                    <div class="flex8gap">
+                        <label for="input-subtask">Subtasks</label>
+                        <div class="input-container">
+                            <input type="text" id="input-subtask" placeholder="Add new subtask" class="widthInputAddTask"><button class="add-button"
+                                id="add-button-subtask" onclick="addSubTask()">+</button>
+                        </div>
+                        <div id="show-subtask" class="show-subtask-board"></div>
+                        <span id="error-message-subtasks" class="error-message">please fill in</span>
+                    </div>
+                </div>
+            </section>
+            <div class="fiel-required">
+                  <span><span class="span-star">*</span>This field is required</span>
+                <div class="button-footer-addTask">
+                    <button class="btn-footer-create btn" onclick="addOrEditTask()">OK
+                        <img src="../assets/img/check.svg" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="pop-up-task d-none" id="add_task">
+        <div class="overlay-create-task" id="overlay-task">
+            <p>Task added to Board</p><img src="../assets/img/imgBoard.png">
+        </div>
+    </div>
+</body>
+
+</html>

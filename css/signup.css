@@ -1,0 +1,315 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+header {
+  width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 90px;
+}
+
+/* Logo*/
+
+.logoSignupPage {
+  width: 100.03px;
+  height: 121.97px;
+  top: 80px;
+  left: 77px;
+  position: fixed;
+}
+
+/*Sign up Container*/
+
+.signupArrow {
+  width: 32px;
+  height: 32px;
+  background-image: url(../assets/img/signupArrow.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.signupArrow:hover {
+  background-image: url(../assets/img/signupArrowHover.png);
+}
+
+.legalButtonsContainerSignup {
+  display: flex;
+  gap: 16px;
+  margin-top: 100px;
+}
+
+.signupContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 422px;
+  padding: 48px 88px 48px 88px;
+  border-radius: 30px;
+  gap: 32px;
+  box-shadow: 0px 0px 14px 3px #0000000a;
+}
+
+/*Sign up headline*/
+
+.signupHeadline {
+  font-family: Inter;
+  font-size: 61px;
+  font-weight: 700;
+  line-height: 73.2px;
+  text-align: center;
+  position: relative;
+  width: 315px;
+  height: 89px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin: 0;
+}
+
+.signupHeadline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  border-bottom: 3px solid #29abe2;
+}
+
+/*Sign up Box*/
+
+.mainCredentialsSignup {
+  height: 326px;
+  width: 422px;
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signupInputFields {
+  width: 422px;
+  height: 286px;
+  gap: 24px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.emailContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 422px;
+  height: 48px;
+}
+
+.emailIcon {
+  position: absolute;
+  right: 21px;
+  width: 24px;
+  height: 24px;
+}
+
+.errorMessageSignup {
+  display: none;
+  color: red;
+  font-size: 12px;
+  position: absolute;
+  top: 300px;
+  left: 0px;
+}
+
+.signupEmail {
+  width: 100%;
+  height: 24px;
+  gap: 10px;
+  display: flex;
+  border-radius: 10px;
+  padding: 12px 21px 12px 21px;
+  border: 1px solid #d1d1d1;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  outline: none;
+  cursor: pointer;
+}
+
+.signupEmail::placeholder,
+.signupPassword::placeholder {
+  color: #d1d1d1;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border: 1px solid #29abe2 !important;
+}
+
+input.confirmPassword.error {
+  border: 1px solid red !important;
+  outline: none;
+}
+
+.signupPassword {
+  width: 100%;
+  gap: 8px;
+  display: flex;
+  height: 24px;
+  padding: 12px 21px 12px 21px;
+  gap: 10px;
+  border-radius: 10px;
+  border: 1px solid #d1d1d1;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  outline: none;
+  cursor: pointer;
+}
+
+/*Remember section*/
+
+.privacyPolicySection {
+  display: flex;
+  width: 231px;
+  height: 24px;
+  gap: 8px;
+  position: relative;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.checkboxRemember {
+  display: none;
+}
+
+.checkboxLabel {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: left;
+  padding-left: 30px;
+  width: 231px;
+  height: 24px;
+}
+
+.checkboxRemember,
+.checkboxLabel {
+  align-self: center;
+}
+
+.checkboxRemember + .checkboxLabel::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("../assets/img/checkboxUnchecked.svg");
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  top: -4px;
+  transition: background-image 0.1s;
+  cursor: pointer;
+}
+
+.checkboxRemember:not(:checked) + .checkboxLabel:hover::before {
+  background-image: url("../assets/img/checkboxUncheckedHover.svg");
+  cursor: pointer;
+}
+
+.checkboxRemember:checked + .checkboxLabel::before {
+  background-image: url("../assets/img/checkboxChecked.svg");
+  cursor: pointer;
+}
+
+.checkboxRemember:checked + .checkboxLabel:hover::before {
+  background-image: url("../assets/img/checkboxCheckedHover.svg");
+  cursor: pointer;
+}
+
+.linkPolicy {
+  text-decoration: none;
+  color: #29abe2;
+  font-size: 16px;
+}
+
+.linkPolicy:hover {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/*Sign up Button*/
+
+#signupButton {
+  grid-template-columns: max-content;
+  width: 126px;
+  height: 55px;
+  padding: 15px 24px 15px 24px;
+  gap: 10px;
+  border-radius: 8px;
+  background: #2a3647;
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 25.2px;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#signupButton:hover {
+  background-color: #29abe2;
+  border: none;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+#signupButton:disabled {
+  background-color: lightgray;
+  color: darkgray;
+  cursor: not-allowed;
+}
+
+/*Overlay*/
+
+.overlay {
+  position: absolute;
+  left: 50%;
+  bottom: -450px;
+  transform: translateX(-50%) translateY(0);
+  width: 312px;
+  height: 74px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  transition: transform 200ms ease-in-out;
+  transition-delay: 400ms;
+  box-shadow: 0px 0px 4px 0px #0000001a;
+  background: #2a3647;
+  border-radius: 20px;
+  padding: 0px 25px;
+  z-index: 10;
+  opacity: 0;
+}
+
+.overlay.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-750%);
+}
+
+

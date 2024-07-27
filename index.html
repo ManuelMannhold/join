@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <script src="./js/summary.js"></script>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="style_2.css">
+  <link rel="stylesheet" href="./fonts.css" />
+  <link rel="stylesheet" href="./assets/templates/css/index_mediaqueries.css">
+  <link rel="stylesheet" href="./assets/templates/css/index_mediaqueries_2.css">
+  <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon" />
+</head>
+
+<body class="mainpage" onload="onloadFunc()">
+  <img id="animatedLogo" class="animate animateMobile" src="./assets/img/logoLarge.svg" alt="Logo" />
+
+  <div class="container">
+    <div class="hiddenMainpage" id="contentMainpage">
+
+      <div class="loginContainer">
+        <h1 class="loginHeadline">Log in</h1>
+        <div class="mainCredentials">
+          <div class="loginInputFields">
+            <form action="" style="
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 32px;
+              " onsubmit="loginUser(); return false;">
+              <div class="interactionContainer">
+                <div class="emailContainer">
+                  <input class="loginEmail" type="email" placeholder="Email" id="loginEmailInput" required />
+                  <img class="emailIcon" src="./assets/img/mailIcon.svg" alt="Email" />
+                </div>
+                <div class="emailContainer">
+                  <input class="loginPassword" type="password" placeholder="Password" id="loginPasswordInput"
+                    required />
+                  <img class="emailIcon" src="./assets/img/lockIcon.svg" alt="Schloss" id="lockIcon" />
+                </div>
+                <div id="errorMessage" class="errorMessage">
+                  Wrong password. Ups! Try again.
+                </div>
+                <div class="rememberMeSection">
+                  <input class="checkboxRemember" type="checkbox" id="rememberMe" />
+                  <label for="rememberMe" class="checkboxLabel">Remember me</label>
+                </div>
+              </div>
+              <div class="loginButtons">
+                <button type="submit" class="mainpageLoginButton">
+                  Log in
+                </button>
+                <button class="mainpageGuestButton" onclick="redirectToSummary()">
+                  Guest Log in
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="mainpageSignUpContainer">
+        <p class="textNotUser">Not a Join user?</p>
+        <button class="mainpageSignUpButton" onclick="redirectToSignUpPage()">
+          Sign up
+        </button>
+      </div>
+      <div class="legalButtonsContainer">
+        <button class="legalButtonLeft" onclick="redirectToPrivacyPage()">
+          Privacy Policy
+        </button>
+        <button class="legalButtonRight" onclick="redirectToLegalPage()">
+          Legal Notice
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>

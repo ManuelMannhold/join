@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+    <script src="../assets/templates/template.js"></script>
+    <script src="../js/summary.js"></script>
+    <link rel="stylesheet" href="../assets/templates/templates.css">
+    <link rel="stylesheet" href="../fonts.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/summary.css">
+    <link rel="stylesheet" href="../assets/templates/css/summary_media.css">
+    <link
+      rel="shortcut icon"
+      href="../assets/img/favicon.ico"
+      type="image/x-icon"
+    />
+</head>
+<body onload="summaryInit()">
+    <div w3-include-html="../assets/templates/template.html"></div>
+    <div id="titleSummary">
+        <p class="summaryTitle">Join 360</p>
+        <div class="vektorTextSummary">
+            <div class="summaryTitleVektor"></div>
+            <p class="summaryTitleText">Key Matrix at a Glance</p>
+        </div>
+        
+    </div>
+    <div class="summaryText">
+        <div id="infosSummary">
+            <div class="toDoDone">
+                <div class="summaryToDO" onclick="location.href='board.html';">
+                    <div class="summaryDoneImg backgroundImg-ToDo"></div>
+                    <div class="flex-center">
+                        <p id="summaryToDo" class="summaryNumber"></p>
+                        <p class="summaryTaskText">To-do</p>
+                    </div>
+                </div>
+                <div class="summaryToDO" onclick="location.href='board.html';">
+                    <div class="summaryDoneImg backgroundImg-Done"></div>
+                    <div class="flex-center">
+                        <p id="summaryDone" class="summaryNumber"></p>
+                        <p class="summaryTaskText">Done</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeLine" onclick="location.href='board.html';">
+                <div class="timeLineUrgent">
+                    <img class="summaryUrgentImg" src="../assets/img/Urgent.svg" alt="">
+                    <div class="flex-center">
+                        <p id="summaryNrUrgent" class="summaryNumber"></p>
+                        <p class="summaryTaskText">Urgent</p>
+                    </div>
+                </div>
+                <div class="timeLineVektor">
+                </div>
+                <div class="timeLineDate">
+                    <p id="summaryDate" class="timeLineDateNumber"></p>
+                    <p class="timeLineDateText">Upcoming Deadline</p>
+                </div>
+            </div>
+            <div class="summaryTasks">
+                <div class="summarySeparateTasks flex-center" onclick="location.href='board.html';">
+                    <p id="summaryNrTask" class="summaryNumber"></p>
+                    <p class="summaryTaskText">Tasks in <br> Board</p>
+                </div>
+                <div class="summarySeparateTasks flex-center" onclick="location.href='board.html';">
+                    <p id="summaryProgress" class="summaryNumber"></p>
+                    <p class="summaryTaskText">Task in <br> Progress</p>
+                </div>
+                <div class="summarySeparateTasks flex-center" onclick="location.href='board.html';">
+                    <p id="summaryAwait" class="summaryNumber"></p>
+                    <p class="summaryTaskText">Awaiting <br> Feedback</p>
+                </div>
+            </div>
+        </div>
+        <div id="textRegards">
+            <p id="greetingSummary" class="regardsTime"></p>
+            <p id="nameSummary" class="regardsName"></p>
+        </div>
+    </div>
+</body>
+</html>

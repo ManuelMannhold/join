@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/templates/templates.css">
+    <link rel="stylesheet" href="../fonts.css" />
+    <script src="../js/template.js"></script>
+    <script src="../js/summary.js"></script>
+</head>
+<body >
+    <header>
+        <div class="flexMax1440">
+            <div class="headerTitel">Kanban Project Management Tool</div>
+            <img class="altImg" src="../assets/img/logoLarge.svg" alt="Logo">
+            <div class="headerImg">
+                <div class="boundingHelp"><img class="imgHelp" src="../assets/img/help.png" alt=""  onclick="location.href='help.html';"></div>
+                <div class="boundingProfil" onclick="openNoteHeader()">
+                    <p id="idLoginName"></p>
+                </div>
+            </div>
+            <div id="headerNote" class="headerNote d-none">
+                <div id="headerNoteHelpTemplate" class="headerNoteButton helpTemplate" onclick="location.href='help.html';">Help</div>
+                <div class="headerNoteButton" onclick="location.href='legal_notice.html';">Legal Notice</div>
+                <div class="headerNoteButton" onclick="location.href='privacy_policy.html';">Privacy Policy</div>
+                <div class="headerNoteButton" onclick="openIndex();">Log out</div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="flexGap200">
+            <img class="logoSidebar" src="../assets/img/logoSidebar.png" alt="">
+            <div id="menu_Sidebar" class="menuSidebar d-none">
+                <div id="frameSummary" class="menuFrames" onclick="location.href='summary.html';">
+                    <div class="iconSidebar flex_center">
+                        <div id="imgFrameSummary" class="imgSidebar imgSummary"></div>
+                    </div>
+                    <p class="menuSidebarHover">Summary</p>
+                </div>
+                <div id="frameAddtasks" class="menuFrames" onclick="location.href='add_task.html';">
+                    <div class="iconSidebar flex_center">
+                        <div id="imgFrameAddtask" class="imgSidebar imgAddTask"></div>
+                    </div>
+                    <p class="menuSidebarHover">Add Task</p>
+                </div>
+                <div id="frameBoard" class="menuFrames" onclick="location.href='board.html';">
+                    <div class="iconSidebar flex_center">
+                        <div id="imgFrameBoard" class="imgSidebar imgBoard"></div>
+                    </div>
+                    <p class="menuSidebarHover">Board</p> 
+                </div>
+                <div id="frameContacts" class="menuFrames" onclick="location.href='contacts.html';">
+                    <div class="iconSidebar flex_center">
+                        <div id="imgFrameContacts" class="imgSidebar imgContacts"></div>
+                    </div>
+                    <p class="menuSidebarHover">Contacts</p>
+                </div>
+        </div>
+        </div>
+        <div id="privacyNav" class="privacySidebar d-none">
+            <div id="framePolicy"><p class="privacyColor padding8px60px" onclick="location.href='privacy_policy.html';">Privacy Policy</p></div>
+            <div id="frameNotice"><p class="privacyColor padding8px60px" onclick="location.href='legal_notice.html';">Legal notice</p></div>            
+        </div>
+    </nav>
+</body>
+</html>

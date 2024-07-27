@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacts</title>
+
+    <link
+      rel="shortcut icon"
+      href="../assets/img/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../css/contacts.css" />
+    <link rel="stylesheet" href="../css/contacts_2.css">
+    <link rel="stylesheet" href="../assets/templates/css/contactsFullscreen.css" />
+    <link rel="stylesheet" href="../assets/templates/css/contactsEdit.css">
+    <link rel="stylesheet" href="../assets/templates/css/contacts_mediaqueries.css">
+    <link rel="stylesheet" href="../assets/templates/css/contacts_mediaq.css">
+    <link rel="stylesheet" href="../assets/templates/css/contacts_mediaquery_small.css">
+    <link rel="stylesheet" href="../fonts.css" />
+  </head>
+  <body onload="initializePage()">
+    <div w3-include-html="../assets/templates/template.html"></div>
+
+    <div class="mainContainerContacts">
+      <!-- Overlay Add Contact Start -->
+      <div class="addNewContactOverlay hidden contactOverlaySmall" id="contactOverlay">
+        <div class="leftOverlayContent">
+          <div class="leftContainer">
+            <img
+              src="../assets/img/logoSidebar.png"
+              alt="Join-Logo"
+              class="contactsOverlayImg"
+            />
+            <h1 class="contactsOverlayHeadline">Add contact</h1>
+            <h2 class="contactsOverlaySubheadline">
+              Tasks are better with a team!
+            </h2>
+          </div>
+          <div class="whiteCloseOverlay">
+            <img
+              src="../assets/img/closeButtonWhite.svg"
+              alt="Close"
+              class="closeButtonWhite"
+              id="closeAddOverlay"
+            />
+          </div>
+        </div>
+
+        <div class="rightOverlayContent">
+          <div class="overlayPersonContainer">
+            <img
+              src="../assets/img/personIconWhite.svg"
+              alt="Person"
+              class="overlayPersonLargeImg"
+            />
+          </div>
+          <div class="overlayInputContainer">
+            <form
+              action=""
+              style="
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 32px;
+              "
+              onsubmit="createContact(); return false"
+            >
+              <div class="overlayInputField">
+                <input
+                  class="overlayContactsInput"
+                  type="text"
+                  name="name"
+                  id="createNameInput"
+                  placeholder="Name"
+                  required
+                  pattern="^[^\s]+\s[^\s]+$" 
+                  title="Please enter your full name (first name and last name)."
+                />
+                <img
+                  class="contactsIcon"
+                  src="../assets/img/personIcon.svg"
+                  alt="Person"
+                />
+              </div>
+              <div class="overlayInputField">
+                <input
+                  class="overlayContactsInput"
+                  type="email"
+                  name="emailAddress"
+                  id="createEmailInput"
+                  placeholder="Email"
+                  required
+                  pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" 
+                  title="Please enter a valid email address."
+                />
+                <img
+                  class="contactsIcon"
+                  src="../assets/img/mailIcon.svg"
+                  alt="E-Mail"
+                />
+              </div>
+              <div class="overlayInputField">
+                <input
+                  class="overlayContactsInput"
+                  type="tel"
+                  name="phoneNumber"
+                  id="createPhoneInput"
+                  placeholder="Phone"
+                  pattern="[0-9]+"
+                  title="Please enter only digits."
+                  required
+                />
+                <img
+                  class="contactsIcon"
+                  src="../assets/img/phone.svg"
+                  alt="Telefon"
+                />
+              </div>
+              <div id="errorMessageContacts" class="errorMessageContacts"></div>
+          </div>
+          
+          <div class="contactButtons">
+            <div class="cancelContainer">
+              <a href="contacts.html" class="contactCancelButton">
+                <img
+                  class="cancelSymbol"
+                  src="../assets/img/cancel.svg"
+                  alt="X-Symbol"
+                />
+                Cancel
+              </a>
+            </div>
+            <div class="createContainer">
+              <button class="contactCreateButton">
+                <img
+                  class="cancelSymbol"
+                  src="../assets/img/haken.svg"
+                  alt="Häkchen"
+                />
+                Create contact
+              </button>
+            </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="closeOverlay">
+          <img
+            src="../assets/img/cancel.svg"
+            alt="Cancel"
+            class="closeOverlayIcon"
+            id="closeOverlay"
+          />
+        </div>
+      </div>
+
+      <!-- Overlay End -->
+
+       <!-- Overlay Edit Start -->
+    <div class="editContactOverlay hidden" id="editOverlay">
+      <div class="leftOverlayContentEdit">
+        <div class="leftContainer">
+          <img
+            src="../assets/img/logoSidebar.png"
+            alt="Join-Logo"
+            class="contactsOverlayImg"
+          />
+          <h1 class="editOverlayHeadline">Edit contact</h1>
+        </div>
+        <div class="whiteCloseEditOverlay">
+          <img
+            src="../assets/img/closeButtonWhite.svg"
+            alt="Close"
+            class="closeEditButtonWhite"
+            id="whiteCloseEditOverlay"
+          />
+        </div>
+      </div>
+
+      <div class="rightOverlayContent">
+        <div class="overlayInitialsContainer">
+          <div class="editInitials" id="contactInitialsEdit"></div>
+        </div>
+        <div class="overlayInputContainer">
+          <form
+            action=""
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 32px;
+            "
+            onsubmit="saveContact(); return false"
+          >
+            <div class="overlayInputField">
+              <input
+                class="overlayContactsInput"
+                type="text"
+                name="name"
+                id="editNameInput"
+                placeholder="Name"
+                required
+                pattern="^[^\s]+\s[^\s]+$" 
+                title="Please enter your full name (first name and last name)."
+              />
+              <img
+                class="contactsIcon"
+                src="../assets/img/personIcon.svg"
+                alt="Person"
+              />
+            </div>
+            <div class="overlayInputField">
+              <input
+                class="overlayContactsInput"
+                type="email"
+                name="emailAddress"
+                id="editEmailInput"
+                placeholder="Email"
+                required
+                pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" 
+                title="Please enter a valid email address."
+              />
+              <img
+                class="contactsIcon"
+                src="../assets/img/mailIcon.svg"
+                alt="E-Mail"
+              />
+            </div>
+            <div class="overlayInputField">
+              <input
+                class="overlayContactsInput"
+                type="tel"
+                name="phoneNumber"
+                id="editPhoneInput"
+                placeholder="Phone"
+                pattern="[0-9]+"
+                title="Please enter only digits."
+                required
+              />
+              <img
+                class="contactsIcon"
+                src="../assets/img/phone.svg"
+                alt="Telefon"
+              />
+            </div>
+        </div>
+        <div class="editButtons">
+          <div class="cancelContainer">
+            <button type="button" class="editDeleteButton" id="editDeleteButton" onclick="deleteContact('${contact.id}')">
+              Delete
+          </button>
+          </div>
+          <div class="createContainer">
+            <button type="submit" class="editButtonOverlay" id="editButton">
+              <img
+                class="cancelSymbol"
+                src="../assets/img/haken.svg"
+                alt="Häkchen"
+              />
+              Save
+            </button>
+          </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="closeOverlay">
+        <img
+          src="../assets/img/cancel.svg"
+          alt="Cancel"
+          class="closeOverlayIcon"
+          id="closeEditOverlay"
+        />
+      </div>
+    </div>
+
+    <!-- Overlay Edit End -->
+      <button class="addContactIcon" onclick="openOverlay()">
+        <img src="../assets/img/contact_add.svg" alt="Person" />
+      </button>
+      <div id="dotIcon" class="dotIconContainer">
+     <img  src="../assets/img/dotIcon.svg" alt="Dot Icon" class="dotIcon" onclick="togglePopup(event)">
+      </div>
+      <div id="popupOverlay" class="popupOverlay hidden">
+        <button class="popupEditContactButton" onclick="editContactFromPopup()">
+          <img class="editImg" src="../assets/img/edit.svg" alt="Edit" /> Edit
+        </button>
+        <button class="popupDeleteContactButton" onclick="deleteContactFromPopup()">
+          <img class="deleteImg" src="../assets/img/delete.svg" alt="Delete" /> Delete
+        </button>
+      </div>
+      <div class="contactsSidebar">
+        <div class="buttonContainer">
+          <button class="addContactButton" onclick="openOverlay()">
+            Add new contact
+            <img src="../assets/img/contact_add.svg" alt="Person" />
+          </button>
+        </div>
+        <div class="contactList" id="contactList"></div>
+      </div>
+
+      <div class="headlinesContainer">
+        <div class="smallResolution">
+         <div class="contactsHeadlineContainer">
+          <h1 class="contactsHeadline">Contacts</h1>
+          <h2 class="subheadingContacts">Better with a team</h2>
+        </div>
+        <a class="contactsArrow" href="../html/contacts.html"></a>
+      </div>
+
+        <div
+          id="contactsFullscreen"
+          class="contactsFullscreen"
+          onclick="showContactDetails()"
+        ></div>
+      </div>
+   
+      <div class="contactCreatedOverlay contactCreatedOverlayHidden">Contact successfully created</div>
+    </div>
+
+    <script src="../js/contacts.js"></script>
+    <script src="../js/contacts_management.js"></script>
+    <script src="../assets/templates/js/contacts_mediaqueries.js"></script>
+    <script src="../assets/templates/js/contacts_template.js"></script>
+    <script src="../assets/templates/template.js"></script>
+    <script src="../js/summary.js"></script>
+    <script src="../assets/templates/js/board_templates.js"></script>
+  </body>
+</html>

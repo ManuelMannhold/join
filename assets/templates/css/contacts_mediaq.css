@@ -1,0 +1,274 @@
+/*Media query*/
+
+@media (min-width: 768px) {
+  .contactsSidebar {
+    display: block !important;
+  }
+}
+
+/*Media query*/
+
+@media (max-width: 768px) {
+  .headlinesContainer {
+    display: none;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .contactsArrow {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    top: 128px;
+    left: calc((100vw - 338px) / 2);
+    gap: 0px;
+    position: absolute;
+    background-image: url(../../img/signupArrow.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: -10px;
+    left: calc(120vw / 2);
+    position: absolute;
+    bottom: 25vh;
+    right: 8vw;
+  }
+
+  .contactsArrow:hover {
+    background-image: url(../../img/signupArrowHover.png);
+  }
+
+  .headlinesContainer {
+    left: 50px;
+  }
+
+  .contactsFullscreen.in {
+    left: 50px;
+  }
+
+  .contactDetailsButtons {
+    display: none;
+  }
+
+  .popupOverlay {
+    width: 116px;
+    height: 100px;
+    padding: 10px;
+    gap: 0px;
+    border-radius: 20px 20px 0px 20px;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    position: absolute;
+    animation: slide-left 0.5s forwards;
+    bottom: 84px;
+    right: 6px;
+    z-index: 3;
+  }
+
+  @-webkit-keyframes slide-left {
+    0% {
+      -webkit-transform: translateX(100px);
+      transform: translateX(100px);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-left {
+    0% {
+      -webkit-transform: translateX(100px);
+      transform: translateX(100px);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+
+  .popupOverlay button:hover {
+    color: #29abe2;
+    font-weight: 700;
+  }
+
+  .popupOverlay button.popupEditContactButton:hover img {
+    content: url("../../img/editHover.svg");
+  }
+
+  .popupOverlay button.popupDeleteContactButton:hover img {
+    content: url("../../img/deleteHover.svg");
+  }
+
+  .popupEditContactButton {
+    width: 96px;
+    height: 40px;
+    padding: 8px 0px 0px 0px;
+    gap: 8px;
+    display: flex;
+    background-color: white;
+    cursor: pointer;
+    border: none;
+    align-items: center;
+  }
+
+  .popupDeleteContactButton {
+    width: 96px;
+    height: 40px;
+    padding: 8px 0px 0px 0px;
+    gap: 8px;
+    display: flex;
+    display: flex;
+    background-color: white;
+    cursor: pointer;
+    border: none;
+    align-items: center;
+  }
+
+  .contactsSidebar {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .contactList {
+    width: 100vw;
+    margin-bottom: 130px;
+  }
+
+  .headlinesContainer {
+    display: none;
+  }
+}
+
+/*Media query*/
+
+@media (max-width: 455px) {
+  .contactListInner {
+    width: 290px;
+    padding-left: 15px;
+    gap: 15px;
+  }
+
+  .contactEmail {
+    font-size: 14px;
+  }
+
+  .addNewContactOverlay,
+  .leftOverlayContent {
+    width: 280px;
+  }
+
+  .contactsOverlayHeadline {
+    font-size: 24px;
+    width: 150px;
+  }
+
+  .contactsOverlaySubheadline {
+    width: 150px;
+    font-size: 18px;
+    margin-top: -15px;
+  }
+
+  .overlayPersonContainer {
+    width: 60px;
+    height: 60px;
+    top: 320px;
+    position: fixed;
+    left: calc(50% - 30px);
+  }
+
+  .overlayPersonLargeImg {
+    width: 60px;
+    height: 60px;
+    top: 320px;
+    position: fixed;
+    left: calc(50% - 30px);
+  }
+
+  .overlayContactsInput {
+    width: 240px;
+    font-size: 16px;
+  }
+
+  .overlayInputContainer {
+    width: 240px;
+  }
+
+  .contactButtons {
+    width: 101px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .contactCreateButton {
+    font-size: 16px;
+    width: 202px;
+  }
+
+  .whiteCloseOverlay {
+    right: calc((100vw - 280px) / 2);
+    left: 220px;
+  }
+
+  .editContactOverlay,
+  .leftOverlayContentEdit {
+    width: 280px;
+  }
+
+  .whiteCloseEditOverlay {
+    right: calc((100vw - 280px) / 2);
+    left: 220px;
+  }
+
+  .popupOverlay {
+    right: 6px;
+  }
+
+  .editOverlayHeadline {
+    font-size: 24px;
+    width: 150px;
+  }
+
+  .overlayInitialsContainer {
+    width: 60px;
+    height: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 320px;
+    position: fixed;
+  }
+
+  .editInitials {
+    font-size: 24px;
+    top: 15px;
+    left: -15px;
+  }
+
+  .editButtons {
+    width: 101px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .editButtonOverlay,
+  .editDeleteButton {
+    font-size: 16px;
+    width: 100px;
+  }
+}
+
+/*Media query*/
+
+@media (min-width: 769px) {
+  .dotIconContainer {
+    opacity: 0;
+  }
+}
+
+/*Media query*/
+
+@media (max-width: 768px) {
+  .dotIconContainer {
+    opacity: 1;
+  }
+}

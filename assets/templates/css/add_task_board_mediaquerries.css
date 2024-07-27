@@ -1,0 +1,517 @@
+@media (min-width: 1400px)
+{
+    .container-board-addTask {
+        right: auto;
+        overflow-y: auto;
+        top: unset;
+        scrollbar-width: none;
+     }
+
+     .fiel-required{
+        margin-top: 24px;
+     }
+}
+
+@media(max-height: 900px)
+{
+    .container-board-addTask {
+        max-height: calc(100vh - 100px);
+    }
+}
+
+ @media(max-width: 1400px) {
+     .container-board-addTask {
+        right: auto;
+        top: unset;
+        scrollbar-width: none;
+        overflow-y: auto;
+     }
+
+     .containerDetailCard {
+        height: 100vh;
+     }
+
+     #content-addTask{
+        overflow-x: hidden;
+        scrollbar-width: none;
+     }
+
+     .fiel-required {
+        margin-top: 24px;
+        margin-bottom: 8px;
+     }
+ }
+
+@media(max-width: 1200px) {
+    .container-board-addTask {
+        width: fit-content;
+    }
+
+    input{
+        width: auto;
+    }
+
+    .content-right{
+        margin-left: 0px;
+        margin-right: 40px;
+        width: 410px;
+    }
+
+    .content-left{
+        width: 410px;
+        margin-left: 40px;
+    }
+
+    #input-description{
+        max-width: none;
+        min-width: none;
+    }
+
+    #input-assigny{
+        width: -webkit-fill-available;
+    }
+
+    #show-contacts{
+        width: -webkit-fill-available;
+        min-width: none;
+        max-width: none;
+    }
+
+    #input-category{
+        width: -webkit-fill-available;
+        /* max-width: 440px; */
+    }
+
+    #display-categorie{
+        width: -webkit-fill-available;
+    }
+
+    #input-subtask{
+        width: -webkit-fill-available;
+    }
+
+    #content-addTask {
+        gap: 20px;
+    }
+    
+}
+
+@media(max-width: 700px) {
+
+    .content-right{
+        width: 300px;
+    }
+
+    .content-left{
+        width: 300px;
+    }
+
+    .header-addTask {
+        padding-left: 20px;
+    }
+}
+
+@media(max-width: 640px) {
+    #content-addTask {
+        gap: 0;
+    }
+
+    .content-right{
+        width: 280px;
+    }
+
+    .content-left{
+        width: 280px;
+    }
+
+    .headline{
+        width: 300px;
+    }
+
+    .header-addTask{
+        padding-top: 20px;
+    }
+
+    #close-button-addTask {
+        margin-right: 20px;
+    }
+
+    .headline{
+        font-size: 40px;
+    }
+
+    .input-prio-span {
+        gap: 8px;
+    }
+
+    .container-board-addTask{
+        height: fit-content;
+        padding-bottom: 20px;
+    }
+
+    #display-categorie {
+        width: -webkit-fill-available;
+    }
+
+}
+
+@media(max-width: 500px) {
+    .content-right{
+        width: 200px;
+        margin-right: 0;
+        margin-left: 20px;
+    }
+
+    .content-right {
+        margin-left: 20px;}
+    
+
+    .content-left{
+        width: 200px;
+        margin-left: 20px;
+    }
+
+    .headline{
+        width: 220px;
+    }
+
+    .header-addTask{
+        padding-left: 20px;
+    }
+
+    #input-title,
+    #input-date,
+    #input-description
+     {
+        width: 100%;
+    }
+}
+
+@media(max-width: 1070px) {
+
+    #content-addTask {
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        /* height: 440px; */
+    }
+
+    .content-right {
+        margin-left: 20px;
+    }
+
+    .seperator {
+         display: none;
+     }
+
+     .input-prio-span {
+         display: flex;
+     }
+
+     .input-container-contacts {
+         align-items: flex-start;
+         min-width: 170px;
+     }
+
+     #show-contacts {
+         min-width: 170px;
+         max-width: 100%;
+     }
+
+     .display-contacts-dropdown {
+         width: 100%;
+     }
+
+     #input-description {
+         min-width: 170px;
+     }
+
+     #display-categorie {
+         width: 55%;
+     }
+
+     /* #display-initials {
+         display: grid;
+         grid-template-columns: repeat(6, 70px);
+     } */
+ }
+
+ @media(max-width: 800px) {
+     /* #display-initials {
+         display: grid;
+         grid-template-columns: repeat(4, 70px);
+     } */
+ }
+
+ @media(max-width: 640px) {
+     .input-prio-span {
+         display: flex;
+         flex-direction: column;
+     }
+
+     .fiel-required{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+ }
+
+ /* #display-initials { */
+     /* grid-template-columns: repeat(3, 70px);
+ } */
+
+ @media(max-width: 540px) {
+     #content-addTask {
+         /* height: 530px; */
+         display: flex;
+     }
+
+    .button-footer-addTask {
+         flex-direction: column;
+     }
+ }
+
+ @media(max-width: 480px) {
+     /* #display-initials {
+         grid-template-columns: repeat(2, 70px);
+     } */
+
+     /* #display-categorie {
+         width: 200px;
+     } */
+ }
+
+ @media(max-width: 1070px)
+{
+    .widthInputAddTask{
+        width: calc(624px - 70px);
+    }
+
+    #input-assigny{
+        width: calc(624px - 70px);
+    }
+
+    .content-right{
+        margin-left: 40px;
+    }
+
+    #input-date{
+        width: calc(624px - 70px);
+    }
+
+    #input-category{
+        width: calc(624px - 70px);
+    }
+
+    #input-subtask{
+        width: calc(624px - 70px);
+    }
+
+    #show-subtask{
+        width: calc(624px - 70px);
+    }
+
+    #display-categorie {
+        width: calc(624px - 70px);
+    }
+
+    .input-categorie-container{
+        width: calc(624px - 70px);
+    }
+
+    .input-container-contacts{
+        width: calc(624px - 70px);
+    }
+
+    .input-container{
+        width: calc(624px - 70px);
+    }
+
+
+    .input-container {
+        display: block; 
+        flex-direction: unset; 
+        align-items: unset; 
+        position: relative;
+    }
+
+    .container-board-addTask {
+        max-height: calc(100vh - 100px);
+    }
+
+    #content-addTask{
+        max-height: calc(100vh - 120px - 200px);
+    }
+}
+
+@media(max-width: 700px)
+{
+    .widthInputAddTask{
+        width: calc(624px - 120px);
+    }
+
+    #input-assigny{
+        width: calc(624px - 120px);
+    }
+
+    #show-subtask{
+        width: calc(624px - 120px);
+    }
+
+    #input-date{
+        width: calc(624px - 120px);
+    }
+
+    #input-category{
+        width: calc(624px - 120px);
+    }
+
+    #input-subtask{
+        width: calc(624px - 120px);
+    }
+
+    .input-prio-span{
+        align-items: center;
+        width: calc(624px - 120px);
+    }
+
+    #display-categorie {
+        width: calc(624px - 120px);
+    }
+
+    .input-categorie-container{
+        width: calc(624px - 120px);
+    }
+
+    .input-container-contacts{
+        width: calc(624px - 120px);
+    }
+
+    .input-container{
+        width: calc(624px - 120px);
+    }
+    
+    #content-addTask{
+        max-height: calc(100vh - 120px - 200px);
+    }
+}
+
+@media(max-width: 640px)
+{
+    .content-left{
+        margin-left: 20px;
+    }
+
+    .content-right{
+        margin-left: 20px;
+    }
+
+    .widthInputAddTask{
+        width: calc(624px - 310px);
+    }
+
+    #input-assigny{
+        width: calc(624px - 310px);
+    }
+
+    #input-date{
+        width: calc(624px - 310px);
+    }
+
+    #show-subtask{
+        width: calc(624px - 310px);
+    }
+
+    #input-category{
+        width: calc(624px - 310px);
+    }
+
+    #input-subtask{
+        width: calc(624px - 310px);
+    }
+
+    .input-prio-span{
+        align-items: center;
+        width: calc(624px - 310px);
+    }
+
+    #display-categorie {
+        width: calc(624px - 310px);
+    }
+
+    .input-categorie-container{
+        width: calc(624px - 310px);
+    }
+
+    .input-container-contacts{
+        width: calc(624px - 310px);
+    }
+
+    .input-container{
+        width: calc(624px - 310px);
+    }
+
+    #content-addTask{
+        max-height: calc(100vh - 120px - 200px);
+    }
+}
+
+@media(max-width: 500px)
+{
+    .widthInputAddTask {
+        width: calc(624px - 390px);
+    }
+
+    #input-title{
+        width: calc(624px - 390px);
+    }
+
+    #input-description{
+        width: calc(624px - 390px);
+    }
+
+    #input-assigny{
+        width: calc(624px - 390px);
+    }
+
+    #show-subtask{
+        width: calc(624px - 390px);
+    }
+
+    #input-date{
+        width: calc(624px - 390px);
+    }
+
+    #input-category{
+        width: calc(624px - 390px);
+    }
+
+    .input-categorie-container{
+        width: calc(624px - 390px);
+    }
+
+    .input-container-contacts{
+        width: calc(624px - 390px);
+    }
+
+    .input-container{
+        width: calc(624px - 390px);
+    }
+
+    #input-subtask{
+        width: calc(624px - 390px);
+    }
+
+    .input-prio-span{
+        width: calc(624px - 390px);
+    }
+
+    #display-categorie {
+        width: calc(624px - 390px);
+    }
+
+    #content-addTask{
+        max-height: calc(100vh - 120px - 200px);
+    }
+}

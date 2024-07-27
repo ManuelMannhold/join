@@ -1,0 +1,394 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "inter", "sans-serif";
+    background-color: #F6F7F8;
+}
+
+textarea{
+    font-family: "inter", "sans-serif";
+}
+
+input{
+    font-family: "inter", "sans-serif";
+}
+
+li{
+    font-family: "inter", "sans-serif";
+    font-size: 20px;
+}
+
+.m-left-328 {
+    margin-left: 328px;
+}
+
+.head {
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
+.header-addTask {
+    padding-top: 64px;
+    padding-left: 74px;
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+    max-width: 1440px;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.z1 {
+    z-index: 1 !important;
+}
+
+.btn {
+    width: 136px;
+    height: 56px;
+    border-radius: 10px;
+    padding: 16px 10px;
+    line-height: 24px;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 25%);
+}
+
+.btn:active {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0);
+}
+
+.span-star {
+    color: #FF8190;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.container-board {
+    position: absolute;
+    top: 12%;
+    right: 10%;
+    border-radius: 15px;
+    border: 1px solid black;
+    background-color: #f6f7f8;
+    width: 1000px;
+    height: 700px;
+}
+
+.container-board-addTask {
+    position: absolute;
+    top: 12%;
+    right: 10%;
+    width: 1116px;
+    height: 870px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 1);
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+#footer-board {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    margin-right: 35px;
+}
+
+.headline {
+    width: 466px;
+    height: 78px;
+    font-family: Inter;
+    font-size: 61px;
+    font-weight: 700;
+    line-height: 73.2px;
+    text-align: left;
+    color: black;
+    margin: 0;
+}
+
+h1 {
+    font-size: 61px;
+    margin-top: -50px;
+    margin-left: 50px;
+}
+
+#close-button {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+
+#close-button-addTask {
+    cursor: pointer;
+    margin-right: 70px;
+}
+
+.display-categorie-board {
+    width: 440px;
+    height: 90px;
+    border: 1px solid #D1D1D1;
+    border-radius: 15px 15px 15px 15px;
+    margin-top: -5px;
+    background-color: #FFFFFF;
+    position: absolute;
+    bottom: 304px;
+    z-index: 10;
+}
+
+.show-subtask-board {
+    width: 440px;
+    height: 64px;
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    overflow: auto;
+    overflow-y: auto;
+}
+
+#footer-board {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 16px;
+    margin-right: 35px;
+}
+
+#content {
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    gap: 24px;
+}
+
+#content-addTask {
+    display: flex;
+    font-size: 20px;
+    gap: 48px;
+}
+
+input {
+    border: 1px solid #D1D1D1;
+    width: 440px;
+    font-size: 20px;
+}
+
+.content-left,
+.content-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 440px;
+    height: 424px;
+    gap: 24px;
+}
+
+.content-left {
+    height: auto;
+}
+
+.content-left-padding {
+    margin-top: calc(174px - 141px);
+    margin-left: 74px;
+}
+
+.content-right-padding {
+    margin-top: calc(174px - 141px);
+}
+
+.content-top-padding {
+    margin-top: calc(174px - 141px);
+}
+
+#input-title,
+#input-description,
+#input-assigned {
+    font-size: 20px;
+    height: 48px;
+}
+
+.width440 {
+    width: 440px;
+}
+
+#input-assigny,
+#input-category {
+    width: 440px;
+    height: 48px;
+    padding: 12px 16px;
+    cursor: pointer;
+    pointer-events: none;
+    border-radius: 10px;
+}
+
+.input-categorie-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.input-categorie-arrow-down {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+}
+
+#display-categorie h2 {
+    font-size: 24px;
+    padding: 5px;
+    font-weight: 400;
+}
+
+#display-categorie h2:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.input-categorie-arrow-down:hover {
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#input-categorie-image-up {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+}
+
+#display-categorie {
+    width: 440px;
+    height: 90px;
+    border: 1px solid #D1D1D1;
+    border-radius: 15px 15px 15px 15px;
+    margin-top: -9px;
+    background-color: #FFFFFF;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#input-title {
+    padding: 12px 21px;
+    border-radius: 10px;
+}
+
+#input-description {
+    padding: 18px 16px;
+    gap: 8px;
+    border-radius: 10px;
+    border: 1px solid #D1D1D1;
+    resize: none;
+    height: 120px;
+}
+
+#input-description-addTask {
+    padding: 18px 16px;
+    gap: 8px;
+    padding: 18px 16px;
+    border-radius: 10px;
+    border: 1px solid #D1D1D1;
+    max-width: 440px;
+    min-width: 300px;
+    max-height: 200px;
+    min-height: 120px;
+}
+
+.fiel-required {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 150px;
+}
+
+.button-footer-addTask {
+    top: 750px;
+    left: 716.25px;
+    gap: 25px;
+    display: flex;
+}
+
+#input-assigny {
+    cursor: pointer;
+    line-height: 24px;
+    position: relative;
+}
+
+.initials-contacts {
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    display: flex;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-container-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+#display-initials {
+    display: grid;
+    bottom: 330px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-row-gap: 30px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+#input-subtask {
+    padding: 5px;
+}
+
+#show-subtask {
+    width: 440px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    overflow: auto;
+}
+
+#subtask {
+    cursor: pointer;
+}
+
+.add-button {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    border: none;
+    background-color: inherit;
+    font-size: 24px;
+    color: #2A3647;
+    position: absolute;
+}

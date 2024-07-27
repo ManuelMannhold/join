@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign up</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../style_2.css">
+  <link rel="stylesheet" href="../css/signup.css" />
+  <link rel="stylesheet" href="../fonts.css" />
+  <link rel="stylesheet" href="../assets/templates/css/signup_mediaqueries.css">
+  <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon" />
+  <script src="../js/signup.js"></script>
+</head>
+
+<body onload="onloadDatabase()">
+  <div class="container">
+    <img class="logoSignupPage" src="../assets/img/logoLarge.svg" alt="Logo" />
+    <div class="signupContainer">
+      <header>
+        <a class="signupArrow" href="../index.html"></a>
+        <h1 class="signupHeadline">Sign up</h1>
+      </header>
+      <div class="mainCredentialsSignup">
+        <div class="signupInputFields">
+          <div id="overlay" class="overlay">You signed up successfully</div>
+          <form action="" style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 32px;
+            " onsubmit="signup(); return false">
+            <div class="emailContainer">
+              <input class="signupEmail" type="text" placeholder="Name" id="signupNameInput" required pattern="^[^\s]+\s[^\s]+$" 
+              title="Please enter your full name (first name and last name)." />
+              <img class="emailIcon" src="../assets/img/personIcon.svg" alt="Person" />
+            </div>
+            <div class="emailContainer">
+              <input class="signupEmail" type="email" placeholder="Email" id="signupEmailInput" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" 
+              title="Please enter a valid email address." />
+              <img class="emailIcon" src="../assets/img/mailIcon.svg" alt="Email" />
+            </div>
+            <div class="emailContainer">
+              <input class="signupPassword" type="password" placeholder="Password" id="signupPasswordInput" required />
+              <img class="emailIcon" src="../assets/img/lockIcon.svg" alt="Schloss" id="signupLockIcon" />
+            </div>
+            <div class="emailContainer">
+              <input class="signupPassword confirmPassword" type="password" placeholder="Confirm Password"
+                id="signupConfirmPassword" required />
+              <img class="emailIcon" src="../assets/img/lockIcon.svg" alt="Schloss" id="signupValidationLockIcon" />
+            </div>
+            <div id="errorMessage" class="errorMessageSignup">
+              Ups! Your password does not match.
+            </div>
+            <div id="customErrorMessage" class="errorMessageSignup"></div>
+        </div>
+        <div class="privacyPolicySection">
+          <input class="checkboxRemember" type="checkbox" id="rememberMe" />
+          <label for="rememberMe" class="checkboxLabel">I accept the
+            <a href="./privacy_policy.html" class="linkPolicy">Privacy Policy</a></label>
+        </div>
+      </div>
+      <button type="submit" id="signupButton">
+        Sign up
+      </button>
+      </form>
+    </div>
+    <div class="legalButtonsContainerSignup">
+      <button class="legalButtonLeft" onclick="redirectToPrivacyPage()">
+        Privacy Policy
+      </button>
+      <button class="legalButtonRight" onclick="redirectToLegalPage()">
+        Legal Notice
+      </button>
+    </div>
+  </div>
+</body>
+
+</html>

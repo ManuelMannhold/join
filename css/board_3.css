@@ -1,0 +1,128 @@
+.containerDetailCard{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 2000px; /* Start position (hidden on the right) */
+    transition: transform 0.5s ease-in-out;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1;
+}
+
+.overflow-hidden{
+    overflow-y: hidden;
+}
+
+.d-none{
+    display: none;
+}
+
+.leftPart{
+    transform: translateX(-2000px);
+    opacity: 1;
+}
+
+.leftPartOut{
+    transform: translateX(2000px);
+    opacity: 0;
+}
+
+#addTaskMobil{
+    width: 40px;
+    height: 40px;
+    padding: 3px;
+}
+
+#content-addTask {
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.display-categorie-board{
+    bottom: 0 !important;
+}
+
+#display-categorie{
+    position: relative;
+    margin-top: -8px;
+}
+
+.flexContainer{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.initials{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+#display-initials{
+    display: flex !important;
+    margin-top: unset;
+}
+
+.initials-contacts{
+    display: flex;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-list{
+    align-items: center;
+    gap: 8px;
+}
+
+.dropDown{
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.titleCard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.TasksToDo:hover .dropDown{
+    opacity: 1;
+}
+
+.changeColumnSpan{
+    cursor: pointer;
+    padding: 2px;
+}
+
+.infoColumn{
+    background-color: rgba(42, 54, 71, 1);
+    color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 8px;
+    width: 120px;
+    height: fit-content;
+    margin-top: 28px;
+    margin-left: 110px;
+    font-size: smaller;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+}
+
+.changeColumnSpan:hover{
+    color: rgba(41, 171, 226, 1);
+}
+
+.opacity{
+    opacity: 1;
+}

@@ -1,0 +1,257 @@
+/*Media query*/
+
+@media (max-width: 1200px) {
+  .signupContainer {
+    left: calc((100vw - 598px) / 2);
+  }
+
+  .legalButtonsContainer {
+    left: calc((100vw - 246px) / 2);
+  }
+}
+
+/*Media query*/
+
+@media (max-width: 980px)
+{
+  .logoSignupPage {
+    width: 64px;
+    height: 78.03px;
+    top: 37px;
+    left: 38px;
+    gap: 10px;
+    display: flex;
+  }
+}
+
+@media (max-width: 780px) {
+  .signupContainer {
+    width: 396px;
+    padding: 32px 0px 32px 0px;
+    gap: 32px;
+    border-radius: 30px;
+    margin-top: 100px;
+  }
+
+  header {
+    justify-content: space-evenly;
+  }
+
+  .signupHeadline {
+    width: 173px;
+    height: 72px;
+    gap: 16px;
+    font-size: 47px;
+    font-weight: 700;
+    line-height: 56.4px;
+    text-align: center;
+  }
+
+  .signupArrow {
+    top: 32px;
+    left: 32px;
+  }
+
+  .signupInputFields {
+    width: 364px;
+    gap: 24px;
+    height: 296px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .emailContainer {
+    width: auto;
+  }
+
+  .signupButton {
+    width: 180px;
+    height: 51px;
+    padding: 4px 0px 4px 0px;
+  }
+
+  .legalButtonsContainer {
+    width: 246px;
+    height: 35px;
+    top: 869px;
+    left: calc((100vw - 246px) / 2);
+    gap: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .legalButtonLeft {
+    width: 121px;
+    height: 35px;
+    padding: 8px 0px 0px 0px;
+    gap: 8px;
+  }
+
+  .legalButtonRight {
+    width: 109px;
+    height: 35px;
+    left: 137px;
+    padding: 8px 0px 0px 0px;
+    gap: 8px;
+  }
+
+  .overlay {
+    bottom: -550px;
+  }
+
+  .overlay.show {
+    transform: translateX(-50%);
+    animation: slideUp 0.5s ease-in-out forwards;
+  }
+
+  @keyframes slideUp {
+    from {
+      bottom: -550px;
+    }
+    to {
+      bottom: -140px;
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .signupContainer {
+    width: 300px;
+    left: calc((100vw - 300px) / 2);
+  }
+
+  .signupInputFields {
+    width: 60%;
+  }
+
+  .emailContainer {
+    width: 280px;
+  }
+}
+
+/*Media query*/
+
+@media (max-width: 428px) {
+  .logoSignupPage {
+    width: 36px;
+    height: 78.03px;
+    top: 0px;
+    left: 38px;
+    gap: 10px;
+    display: flex;
+  }
+
+  header {
+    margin-right: 0;
+    justify-content: flex-start;
+  }
+
+  .signupArrow {
+    padding-right: 50px;
+  }
+
+  #signupButton {
+    grid-template-columns: max-content;
+    width: 126px;
+    height: 40px;
+    padding: 15px 24px 15px 24px;
+    gap: 10px;
+    border-radius: 8px;
+    background: #2a3647;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 25.2px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  input {
+    width: 80%;
+  }
+
+  .signupContainer {
+    margin-top: 70px;
+    width: 90%;
+    padding: 32px 0px 32px 0px;
+    gap: 32px;
+    border-radius: 30px;
+  }
+
+  .signupHeadline {
+    width: 173px;
+    height: 72px;
+    gap: 16px;
+    font-size: 47px;
+    font-weight: 700;
+    line-height: 56.4px;
+    text-align: center;
+  }
+
+  .signupArrow {
+    top: 32px;
+    left: 32px;
+  }
+
+  .signupInputFields {
+    gap: 24px;
+    height: 296px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .emailContainer {
+    width: auto;
+  }
+
+  .signupButton {
+    width: 180px;
+    height: 51px;
+    padding: 4px 0px 4px 0px;
+  }
+
+  .legalButtonsContainer {
+    width: 246px;
+    height: 35px;
+    top: 869px;
+    left: 91px;
+    gap: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .legalButtonLeft {
+    width: 121px;
+    height: 35px;
+    padding: 8px 0px 0px 0px;
+    gap: 8px;
+  }
+
+  .legalButtonRight {
+    width: 109px;
+    height: 35px;
+    left: 137px;
+    padding: 8px 0px 0px 0px;
+    gap: 8px;
+  }
+
+  .overlay.show {
+    transform: translateX(-50%) translateY(-308px);
+  }
+}
+
+/*Media query*/
+
+@media(max-height: 820px) {
+  .legalButtonsContainerSignup {
+    margin-top: 0;
+  }
+  .signupContainer {
+    padding: 10px;
+        margin-top: 70px;
+  }
+}
