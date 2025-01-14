@@ -373,7 +373,7 @@ function checkContactsInList(i, event, stopPro) {
   let contactChecked = document.getElementById(`checkbox-contacts${i}`);
   if (contactChecked.checked == true) {
     contactChoose[i] = true;
-    displayInitials();
+    displayInitials(i);
     isChecked.push(contactChecked.checked);
   } else {
     contactChoose[i] = false;
