@@ -190,10 +190,8 @@
 .contacts-checkbox {
     width: 20px;
     height: 30px;
-}
-
-.contacts-checkbox {
     border: 3px solid black;
+    cursor: pointer;
 }
 
 .contact-span {

@@ -1,5 +1,5 @@
 const contactsURL =
-  "https://contacts-c645d-default-rtdb.europe-west1.firebasedatabase.app/";
+  "https://mycontacts-f669e-default-rtdb.europe-west1.firebasedatabase.app/";
 
 let contacts = [];
 

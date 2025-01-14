@@ -1,4 +1,4 @@
-const BASE_URL ="https://join-78ba4-default-rtdb.europe-west1.firebasedatabase.app/";
+const BASE_URL ="https://myjoin-3a457-default-rtdb.europe-west1.firebasedatabase.app/";
 let currentTask = 0;
 let openTask = 0;
 let useEditFunction = 0;

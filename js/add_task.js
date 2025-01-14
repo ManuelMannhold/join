@@ -30,9 +30,9 @@ const colorClasses = [
   "red",
 ];
 const URL_CONTACT =
-  "https://contacts-c645d-default-rtdb.europe-west1.firebasedatabase.app/";
+  "https://mycontacts-f669e-default-rtdb.europe-west1.firebasedatabase.app/";
 const TASK_URL =
-  "https://join-78ba4-default-rtdb.europe-west1.firebasedatabase.app/";
+  "https://myjoin-3a457-default-rtdb.europe-west1.firebasedatabase.app/";
 let resultTask = false;
 
 /**
