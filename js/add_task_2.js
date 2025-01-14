@@ -293,7 +293,7 @@ function getTaskDetails() {
   let assigned = document.getElementById("show-contacts");
   let date = document.getElementById("input-date").valueAsDate;
   date.valueAsDate = formDate(date);
-  let category = document.getElementById("input-category");
+  let category = document.getElementById("input-category").value;
   let prio = getPrio();
 
 
