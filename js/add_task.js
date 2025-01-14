@@ -322,7 +322,9 @@ function showSelectedContacts(ini, i) {
       ini.innerHTML += displayInitials(i, initial[j]);
     } else count++;
   }
-  initalsBackgroundColor(i);
+  if(initial > 0) {
+    initalsBackgroundColor(i);
+  }
   if (count) ini.innerHTML += displayInitialsNumber(count);
 }
 

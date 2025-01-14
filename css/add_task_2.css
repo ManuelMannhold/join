@@ -172,6 +172,7 @@
     bottom: -235px;
     left: 0px;
     background-color: white;
+    z-index: 10;
 }
 
 .contact-list {
