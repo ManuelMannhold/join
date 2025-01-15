@@ -5,7 +5,6 @@
         overflow-y: auto;
         height: fit-content;
         scrollbar-width: none;
-        max-height: 480px;
     }
 
     .container {
@@ -15,6 +14,7 @@
         margin-left: 0;
         overflow-y: scroll;
         overflow-x: hidden;
+        height: calc(100vh - 176px);
     }
 
     .container-board-addTask {
@@ -48,8 +48,8 @@
     .footer {
         margin-top: 0;
         justify-content: center;
-        height: 100px;
         margin-top: 20px;
+        margin-bottom: 10px;
     }
 
     .footer span {
@@ -166,11 +166,7 @@
 
     .footer {
         display: flex;
-        flex-direction: row !important;
         align-items: center;
-
-        width: inherit;
-        margin-top: 0;
     }
 
     .required-field-footer {
@@ -224,49 +220,7 @@
 }
 
 @media(max-width: 345px) {
-    #content {
-        max-height: 450px;
-    }
-
     .overlay-create-task {
         flex-direction: column;
-    }
-}
-
-@media(max-height: 740px) {
-    #content {
-        height: 35vh;
-    }
-}
-
-/*--------------------- max-heigh ------------------------*/
-
-@media(max-height: 620px) {
-    #content {
-        max-height: 25vh;
-    }
-}
-
-@media(max-height: 790px) {
-    #content {
-        max-height: 200px;
-    }
-}
-
-@media(max-height: 800px) {
-    #content {
-        max-height: 35vh;
-    }
-}
-
-@media(max-height: 890px) {
-    #content {
-        max-height: 40vh;
-    }
-}
-
-@media(max-height: 1060px) {
-    #content {
-        max-height: 45vh;
     }
 }
