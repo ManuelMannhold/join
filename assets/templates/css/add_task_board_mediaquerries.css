@@ -229,18 +229,6 @@
      #display-categorie {
          width: 55%;
      }
-
-     /* #display-initials {
-         display: grid;
-         grid-template-columns: repeat(6, 70px);
-     } */
- }
-
- @media(max-width: 800px) {
-     /* #display-initials {
-         display: grid;
-         grid-template-columns: repeat(4, 70px);
-     } */
  }
 
  @media(max-width: 640px) {
@@ -257,29 +245,14 @@
     }
  }
 
- /* #display-initials { */
-     /* grid-template-columns: repeat(3, 70px);
- } */
-
  @media(max-width: 540px) {
      #content-addTask {
-         /* height: 530px; */
          display: flex;
      }
 
     .button-footer-addTask {
          flex-direction: column;
      }
- }
-
- @media(max-width: 480px) {
-     /* #display-initials {
-         grid-template-columns: repeat(2, 70px);
-     } */
-
-     /* #display-categorie {
-         width: 200px;
-     } */
  }
 
  @media(max-width: 1070px)
@@ -341,7 +314,7 @@
     }
 
     #content-addTask{
-        max-height: calc(100vh - 120px - 200px);
+        max-height: calc(100vh - 360px);
     }
 }
 
@@ -393,7 +366,7 @@
     }
     
     #content-addTask{
-        max-height: calc(100vh - 120px - 200px);
+        max-height: calc(100vh - 360px);
     }
 }
 
