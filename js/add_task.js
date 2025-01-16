@@ -83,7 +83,7 @@ async function fetchContacts(path = "") {
           colorClasses[contacts.indexOf(contact) % colorClasses.length];
       }
     });
-  } catch (error) {}
+  } catch (error) { }
 }
 
 /**
@@ -257,15 +257,13 @@ function closeContacts(event, stopPro) {
  * the `contacts` array and perform operations based on that index.
  */
 function addInitials(i) {
-  let ini = document.getElementById("display-initials");
-  const initials = getInitials(contacts[i].name);
-  if (contactChoose[i] != true) {
-    addNewSelectedContact(i, initials, ini);
-  } else {
-    forLoopAddInitials(initials, i);
-  }
-  ini.innerHTML = "";
-  showSelectedContacts(ini, i);
+  const initials = getInitialsfromTask(contacts[i].name);
+  contactChoose.push(contacts[i]);
+  showSelectedContacts(i, initials);
+}
+
+function spliceInitials() {
+  
 }
 
 /**
@@ -287,25 +285,25 @@ function forLoopAddInitials(initials, i) {
   }
 }
 
-/**
- * The function `addNewSelectedContact` adds a new contact to a list of selected contacts in
- * JavaScript.
- * @param {string} i - The parameter `i` in the `addNewSelectedContact` function is typically used as an index
- * to access a specific element in an array or collection. It helps identify the position of the
- * selected contact within the contacts array.
- * @param {array} initials - The `initials` parameter in the `addNewSelectedContact` function is used to store
- * the initials of a selected contact.
- * @param {string} ini - The parameter `ini` in the `addNewSelectedContact` function is a reference to an HTML
- * element that is being used to display the initials of a selected contact. The function removes the
- * "d-none" class from this element to make it visible.
- */
-function addNewSelectedContact(i, initials, ini) {
-  ini.classList.remove("d-none");
-  initial.push(initials);
-  initialName.push(contacts[i].name);
-  namesFromContacts.push(contacts[i].name);
-  contactChoose[i] = true;
-}
+// /**
+//  * The function `addNewSelectedContact` adds a new contact to a list of selected contacts in
+//  * JavaScript.
+//  * @param {string} i - The parameter `i` in the `addNewSelectedContact` function is typically used as an index
+//  * to access a specific element in an array or collection. It helps identify the position of the
+//  * selected contact within the contacts array.
+//  * @param {array} initials - The `initials` parameter in the `addNewSelectedContact` function is used to store
+//  * the initials of a selected contact.
+//  * @param {string} ini - The parameter `ini` in the `addNewSelectedContact` function is a reference to an HTML
+//  * element that is being used to display the initials of a selected contact. The function removes the
+//  * "d-none" class from this element to make it visible.
+//  */
+// function addNewSelectedContact(i, initials, ini) {
+//   ini.classList.remove("d-none");
+//   initial.push(initials);
+//   initialName.push(contacts[i].name);
+//   namesFromContacts.push(contacts[i].name);
+//   contactChoose[i] = true;
+// }
 
 /**
  * The function `showSelectedContacts` displays the initials of selected contacts and a count of
@@ -315,15 +313,15 @@ function addNewSelectedContact(i, initials, ini) {
  * inner HTML content with the initials and background colors of the selected contacts based on the
  * provided data.
  */
-function showSelectedContacts(ini, i) {
+function showSelectedContacts(i, initials) {
+  let ini = document.getElementById("display-initials");
+  ini.classList.remove('d-none');
   let count = 0;
-  for (let j = 0; j < initial.length; j++) {
+  for (let j = 0; j < contactChoose.length; j++) {
     if (j < 4) {
-      ini.innerHTML += displayInitials(i, initial[j]);
+      ini.innerHTML = "";
+      ini.innerHTML += displayInitials(j, initials, contactChoose);
     } else count++;
-  }
-  if(initial > 0) {
-    initalsBackgroundColor(i);
   }
   if (count) ini.innerHTML += displayInitialsNumber(count);
 }
@@ -337,9 +335,10 @@ function showSelectedContacts(ini, i) {
  * spaces, extracts the first character of each part, and then joins these characters together to form
  * the initials of the name. Finally, the function returns the initials as a string.
  */
-function getInitials(name) {
+function getInitialsfromTask(name) {
   const nameParts = name.split(" ");
   const initials = nameParts.map((part) => part.charAt(0)).join("");
+  contactChoose.push(initials);
 
   return initials;
 }

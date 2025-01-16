@@ -281,6 +281,7 @@
     width: 100%;
     position: relative;
     border-bottom: 1px solid blue;
+    height: 50px;
 }
 
 .seperator-edit-subtask {
@@ -318,4 +319,9 @@
     padding-right: 10px;
     display: flex;
     gap: 5px;
+}
+
+.required-field-footer {
+    display: flex;
+    align-items: center;
 }

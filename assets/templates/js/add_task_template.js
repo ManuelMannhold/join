@@ -27,10 +27,10 @@ function showSubtaskTemplate(i, tasks) {
 `;
 }
 
-function displayInitials(i, initials) {
+function displayInitials(i, initials, contactChoose) {
   return `
           <div>
-              <span class="initials" id="initials-span${i}" style="background-color:${contacts[i].colorClass}">${initials}</span>
+              <span class="initials" id="initials-span${i}" style="background-color:${contactChoose[i].colorClass}">${initials}</span>
           </div>
       `;
 }
