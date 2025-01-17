@@ -162,19 +162,17 @@
 
 #show-contacts {
     width: 440px;
-    height: 235px;
+    height: auto;
     overflow-y: auto;
     overflow-x: hidden;
-    bottom: 58px;
-    left: 360px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     position: absolute;
-    bottom: -235px;
-    left: 0px;
+    bottom: -156px;
     background-color: white;
     z-index: 10;
+    border: 1px solid #D1D1D1;
 }
 
 .contact-list {
