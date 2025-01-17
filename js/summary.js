@@ -1,5 +1,5 @@
 let tasksBoard = [];
-const SUMMARY_URL = "https://join-78ba4-default-rtdb.europe-west1.firebasedatabase.app/";
+const SUMMARY_URL = "https://myjoin-3a457-default-rtdb.europe-west1.firebasedatabase.app/";
 let result2 = false;
 let result3 = true;
 let loginName;
