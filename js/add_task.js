@@ -159,17 +159,13 @@ function showContacts() {
   }
 }
 
-/**
- * The function `updateCheckbox` is used to update the state of a checkbox based on the value of
- * `contactChoose` array at index `i`.
- * @param {string} i - The parameter `i` in the `updateCheckbox` function is used as an index to access a
- * specific element in the `contactChoose` array and to dynamically generate the id of a checkbox
- * element based on that index.
- */
+
 function updateCheckbox(i) {
   let idcheckbox = "checkbox-contacts" + i;
-  if (contactChoose[i] == true) {
-    document.getElementById(idcheckbox).setAttribute("checked", "checked");
+  const isAlreadySelected = contactChoose.some(contact => contact.id === contacts[i].id);
+
+  if (isAlreadySelected) {
+    document.getElementById(idcheckbox).setAttribute("checked", "unchecked");
   }
 }
 
@@ -250,20 +246,24 @@ function closeContacts(event, stopPro) {
 
 //-------------Begin initials functions--------------//
 
-/**
- * The function `addInitials` retrieves the initials of a contact's name and either adds a new selected
- * contact or updates an existing one.
- * @param {string} i - The parameter `i` in the `addInitials` function is used as an index to access elements in
- * the `contacts` array and perform operations based on that index.
- */
+
 function addInitials(i) {
-  const initials = getInitialsfromTask(contacts[i].name);
-  contactChoose.push(contacts[i]);
-  showSelectedContacts(i, initials);
+  let ini = document.getElementById("display-initials");
+  const contactIndex = contactChoose.findIndex(contact => contact.id === contacts[i].id);
+
+  if (contactIndex !== -1) {
+    spliceContact(contactIndex);
+    showSelectedContacts();
+  } else {
+    contactChoose.push(contacts[i]);
+    showSelectedContacts();
+  }
 }
 
-function spliceInitials() {
-  
+
+
+function spliceContact(i) {
+  contactChoose.splice(i, 1);
 }
 
 /**
@@ -285,26 +285,6 @@ function forLoopAddInitials(initials, i) {
   }
 }
 
-// /**
-//  * The function `addNewSelectedContact` adds a new contact to a list of selected contacts in
-//  * JavaScript.
-//  * @param {string} i - The parameter `i` in the `addNewSelectedContact` function is typically used as an index
-//  * to access a specific element in an array or collection. It helps identify the position of the
-//  * selected contact within the contacts array.
-//  * @param {array} initials - The `initials` parameter in the `addNewSelectedContact` function is used to store
-//  * the initials of a selected contact.
-//  * @param {string} ini - The parameter `ini` in the `addNewSelectedContact` function is a reference to an HTML
-//  * element that is being used to display the initials of a selected contact. The function removes the
-//  * "d-none" class from this element to make it visible.
-//  */
-// function addNewSelectedContact(i, initials, ini) {
-//   ini.classList.remove("d-none");
-//   initial.push(initials);
-//   initialName.push(contacts[i].name);
-//   namesFromContacts.push(contacts[i].name);
-//   contactChoose[i] = true;
-// }
-
 /**
  * The function `showSelectedContacts` displays the initials of selected contacts and a count of
  * additional contacts.
@@ -313,15 +293,17 @@ function forLoopAddInitials(initials, i) {
  * inner HTML content with the initials and background colors of the selected contacts based on the
  * provided data.
  */
-function showSelectedContacts(i, initials) {
+function showSelectedContacts() {
   let ini = document.getElementById("display-initials");
   ini.classList.remove('d-none');
+  ini.innerHTML = "";
   let count = 0;
   for (let j = 0; j < contactChoose.length; j++) {
     if (j < 4) {
-      ini.innerHTML = "";
-      ini.innerHTML += displayInitials(j, initials, contactChoose);
-    } else count++;
+      ini.innerHTML += displayInitials(j, getInitialsfromTask(contactChoose[j].name), contactChoose);
+    } else {
+      count++;
+    }
   }
   if (count) ini.innerHTML += displayInitialsNumber(count);
 }
@@ -338,51 +320,29 @@ function showSelectedContacts(i, initials) {
 function getInitialsfromTask(name) {
   const nameParts = name.split(" ");
   const initials = nameParts.map((part) => part.charAt(0)).join("");
-  contactChoose.push(initials);
 
   return initials;
 }
 
-/**
- * The function `initalsBackgroundColor` sets the background color of an element based on a color class
- * stored in a contacts array.
- * @param {string} i - The parameter `i` in the `initalsBackgroundColor` function is used as an index to access
- * a specific element in the `contacts` array.
- */
-function initalsBackgroundColor(i) {
-  let ini = document.getElementById(`initials-span${i}`);
-
-  ini.style.backgroundColor = contacts[i].colorClass;
-}
 //-------------End initials functions--------------//
 
-/**
- * The function `checkContactsInList` checks if a contact is selected in a list and updates the state
- * accordingly.
- * @param {string} i - The parameter `i` in the `checkContactsInList` function is typically used as an index or
- * identifier to reference a specific contact in a list.
- * @param {object} event - The `event` parameter in the `checkContactsInList` function is typically an event
- * object that represents the event that was triggered, such as a click event. It can be used to access
- * information about the event, like the target element or any additional data associated with the
- * event.
- * @param {boolean} stopPro - The `stopPro` parameter is a boolean value that is used to determine whether the
- * event propagation should be stopped or not. If `stopPro` is `true`, then the `stopPropagation()`
- * method will be called on the event object to prevent further propagation of the current event in the
- * capturing and
- */
 function checkContactsInList(i, event, stopPro) {
   let contactChecked = document.getElementById(`checkbox-contacts${i}`);
-  if (contactChecked.checked == true) {
-    contactChoose[i] = true;
-    displayInitials(i);
-    isChecked.push(contactChecked.checked);
+
+  if (contactChecked.checked) {
+    if (!contactChoose.includes(contacts[i])) {
+      contactChoose.push(contacts[i]);
+      const initials = getInitialsfromTask(contacts[i].name);
+      showSelectedContacts(i, initials);
+    }
   } else {
-    contactChoose[i] = false;
-    uncheckContactInList(contactChecked);
+    contactChoose = contactChoose.filter((contact) => contact !== contacts[i]);
+    showSelectedContacts();
   }
-  save();
+  updateCheckbox();
   if (stopPro) event.stopPropagation();
 }
+
 
 /**
  * The function uncheckContactInList checks if a contact is unchecked in a list.
@@ -391,6 +351,7 @@ function checkContactsInList(i, event, stopPro) {
  * unchecked in the list.
  */
 function uncheckContactInList(contactChecked) {
-  if (contactChecked.checked == false) {
+  if (!contactChecked.checked) {
   }
 }
+
