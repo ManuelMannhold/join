@@ -224,7 +224,6 @@ function getColorClass() {
   }
 }
 
-
 /**
  * The function `createTask` asynchronously creates a task, adds it to two arrays, updates data in a
  * specific path, clears inputs, splices the task, and saves the changes.
@@ -256,7 +255,8 @@ async function createTask() {
  * - taskApplication: currentColumn, is creating an object with three properties:
  */
 function buildTask() {
-  let { title, description, assigned, date, category, color, prio } = getTaskDetails();
+  let { title, description, assigned, date, category, color, prio } =
+    getTaskDetails();
 
   return {
     title: title,
@@ -295,7 +295,6 @@ function getTaskDetails() {
   date.valueAsDate = formDate(date);
   let category = document.getElementById("input-category").value;
   let prio = getPrio();
-
 
   return { title, description, assigned, date, category, prio };
 }
@@ -387,4 +386,3 @@ function spliceTask() {
   tasks.splice(0, tasks.length);
   return tasks;
 }
-
