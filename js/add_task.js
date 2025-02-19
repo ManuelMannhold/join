@@ -83,7 +83,7 @@ async function fetchContacts(path = "") {
           colorClasses[contacts.indexOf(contact) % colorClasses.length];
       }
     });
-  } catch (error) { }
+  } catch (error) {}
 }
 
 /**
@@ -159,10 +159,16 @@ function showContacts() {
   }
 }
 
-
+/**
+ * Updates the checkbox state for a contact based on its selection status.
+ *
+ * @param {number} i - The index of the contact in the contacts array.
+ */
 function updateCheckbox(i) {
   let idcheckbox = "checkbox-contacts" + i;
-  const isAlreadySelected = contactChoose.some(contact => contact.id === contacts[i].id);
+  const isAlreadySelected = contactChoose.some(
+    (contact) => contact.id === contacts[i].id
+  );
 
   if (isAlreadySelected) {
     document.getElementById(idcheckbox).setAttribute("checked", "unchecked");
@@ -246,10 +252,11 @@ function closeContacts(event, stopPro) {
 
 //-------------Begin initials functions--------------//
 
-
 function addInitials(i) {
   let ini = document.getElementById("display-initials");
-  const contactIndex = contactChoose.findIndex(contact => contact.id === contacts[i].id);
+  const contactIndex = contactChoose.findIndex(
+    (contact) => contact.id === contacts[i].id
+  );
 
   if (contactIndex !== -1) {
     spliceContact(contactIndex);
@@ -260,8 +267,11 @@ function addInitials(i) {
   }
 }
 
-
-
+/**
+ * Removes a contact from the contactChoose array at the specified index.
+ *
+ * @param {number} i - The index of the contact to remove.
+ */
 function spliceContact(i) {
   contactChoose.splice(i, 1);
 }
@@ -295,12 +305,16 @@ function forLoopAddInitials(initials, i) {
  */
 function showSelectedContacts() {
   let ini = document.getElementById("display-initials");
-  ini.classList.remove('d-none');
+  ini.classList.remove("d-none");
   ini.innerHTML = "";
   let count = 0;
   for (let j = 0; j < contactChoose.length; j++) {
     if (j < 4) {
-      ini.innerHTML += displayInitials(j, getInitialsfromTask(contactChoose[j].name), contactChoose);
+      ini.innerHTML += displayInitials(
+        j,
+        getInitialsfromTask(contactChoose[j].name),
+        contactChoose
+      );
     } else {
       count++;
     }
@@ -343,7 +357,6 @@ function checkContactsInList(i, event, stopPro) {
   if (stopPro) event.stopPropagation();
 }
 
-
 /**
  * The function uncheckContactInList checks if a contact is unchecked in a list.
  * @param {object} contactChecked - The `contactChecked` parameter is likely an object representing a contact in
@@ -354,4 +367,3 @@ function uncheckContactInList(contactChecked) {
   if (!contactChecked.checked) {
   }
 }
-
