@@ -1,12 +1,8 @@
-/*Media query*/
-
 @media (max-width: 1400px) {
   .contactDetailsName {
     font-size: 28px;
   }
 }
-
-/*Media query*/
 
 @media (max-width: 1400px) {
   .contactsSidebar {
@@ -46,8 +42,6 @@
     left: 490px;
   }
 
-  /*Add new contact overlay*/
-
   .addNewContactOverlay {
     position: fixed;
     top: 50%;
@@ -67,7 +61,7 @@
     transition: transform 0.5s ease-out;
   }
 
-  .errorMessageContacts{
+  .errorMessageContacts {
     top: calc((100% - 30px));
   }
 
@@ -201,12 +195,11 @@
     0% {
       transform: translate(-50%, 0);
     }
+
     100% {
       transform: translate(-50%, -50%);
     }
   }
-
-  /*Edit contact Overlay*/
 
   .editContactOverlay {
     position: fixed;
@@ -226,8 +219,6 @@
     animation: slide-up 0.5s ease-out forwards;
     transition: transform 0.5s ease-out;
   }
-
-  /*New close button in white*/
 
   .closeEditOverlayIcon {
     display: none;
@@ -311,8 +302,6 @@
   }
 }
 
-/*Media query*/
-
 @media (max-width: 880px) {
   .buttonContainer {
     display: none;
@@ -386,5 +375,5 @@
 
   .fullContactDetails {
     top: 260px;
-}
+  }
 }

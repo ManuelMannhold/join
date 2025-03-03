@@ -1,13 +1,9 @@
-/*max-width: 1320px*/
-
 @media (max-width: 1320px) {
   .mainpageSignUpContainer {
     width: 292px;
     height: 49px;
   }
 }
-
-/*max-width: 1200px*/
 
 @media (max-width: 1200px) {
   .loginContainer {
@@ -19,11 +15,8 @@
   }
 }
 
-/*max-width: 890px */
-
 @media (max-width: 890px) {
   .mainpageSignUpContainer {
-    /*left: calc(100% / 2);*/
     top: 37px;
     right: 38px;
   }
@@ -45,6 +38,7 @@
       -webkit-transform: translateY(0) translateX(0);
       transform: translateY(0) translateX(0);
     }
+
     100% {
       width: 64px;
       height: 78.03px;
@@ -65,6 +59,7 @@
       -webkit-transform: translateY(0) translateX(0);
       transform: translateY(0) translateX(0);
     }
+
     100% {
       width: 64px;
       height: 78.03px;
@@ -77,18 +72,10 @@
   }
 }
 
-/*max-width: 670px */
-
 @media (max-width: 670px) {
   .animate {
     display: none;
   }
-
-  /* .mainpageSignUpContainer {
-    flex-direction: column;
-    gap: 0;
-    left: calc(100% / 3);
-  } */
 
   .animateMobile {
     width: 100.03px;
@@ -112,6 +99,7 @@
       -webkit-transform: translateY(0) translateX(0);
       transform: translateY(0) translateX(0);
     }
+
     100% {
       width: 64px;
       height: 78.03px;
@@ -132,6 +120,7 @@
       -webkit-transform: translateY(0) translateX(0);
       transform: translateY(0) translateX(0);
     }
+
     100% {
       width: 64px;
       height: 78.03px;
@@ -169,15 +158,6 @@
     gap: 16px;
   }
 
-  /* .loginButtons {
-    width: 180px;
-    height: 123px;
-    gap: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  } */
-
   .mainpageLoginButton {
     width: 180px;
     height: 51px;
@@ -204,31 +184,9 @@
   }
 }
 
-/*max-width: 580px */
-
 @media (max-width: 580px) {
   .loginContainer {
     width: 160px;
     left: calc((100vw - 300px) / 2);
   }
-
-  /* .interactionContainer {
-    width: 280px;
-  } */
-
-  /* .loginEmail,
-  .loginPassword {
-    width: 230px;
-  } */
 }
-
-
-
-
-
-
-
-
-
-
-

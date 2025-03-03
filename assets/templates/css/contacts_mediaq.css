@@ -1,12 +1,8 @@
-/*Media query*/
-
 @media (min-width: 768px) {
   .contactsSidebar {
     display: block !important;
   }
 }
-
-/*Media query*/
 
 @media (max-width: 768px) {
   .headlinesContainer {
@@ -70,6 +66,7 @@
       -webkit-transform: translateX(100px);
       transform: translateX(100px);
     }
+
     100% {
       -webkit-transform: translateX(0);
       transform: translateX(0);
@@ -81,6 +78,7 @@
       -webkit-transform: translateX(100px);
       transform: translateX(100px);
     }
+
     100% {
       -webkit-transform: translateX(0);
       transform: translateX(0);
@@ -139,8 +137,6 @@
     display: none;
   }
 }
-
-/*Media query*/
 
 @media (max-width: 455px) {
   .contactListInner {
@@ -257,15 +253,11 @@
   }
 }
 
-/*Media query*/
-
 @media (min-width: 769px) {
   .dotIconContainer {
     opacity: 0;
   }
 }
-
-/*Media query*/
 
 @media (max-width: 768px) {
   .dotIconContainer {

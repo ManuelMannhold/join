@@ -24,7 +24,7 @@
     <script src="../assets/templates/js/board_templates.js"></script>
     <script src="../js/add_task_board.js"></script>
     <script src="../assets/templates/js/add_task_template.js"></script>
-    <script src="../js/add_task.js"></script>
+    <script src="../js/add_task_contacts.js"></script>
     <link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/x-icon" />
 </head>
 
@@ -110,7 +110,7 @@
         <div id="inProgress" ondrop="drop(1)" ondragover="allowDrop(event)" class="columnBoard scrollbarColumn"></div>
         <div class="boardColumn mobilBoardTaskTitles">
             <div class="titleBoardColumn">Await feedback</div>
-            <button class="addBoardColumn"  onclick="initBoard(2)">
+            <button class="addBoardColumn" onclick="initBoard(2)">
                 <div class="plus">+</div>
             </button>
         </div>
@@ -137,7 +137,8 @@
                 <div class="content-left content-left-padding">
                     <form class="flex8gap" onsubmit="addTask(); return false">
                         <label for="input-title">Title<span class="span-star width440">*</span></label>
-                        <input type="text" id="input-title" class="widthInputAddTask" placeholder="Enter a Title" required>
+                        <input type="text" id="input-title" class="widthInputAddTask" placeholder="Enter a Title"
+                            required>
                         <span id="error-message-title" class="error-message">Field required</span>
                     </form>
                     <div class="flex8gap">
@@ -158,9 +159,9 @@
                     </div>
                     <div id="display-initials" class="d-none flexContainer"></div>
                 </div>
-    
+
                 <div class="seperator content-top-padding" id="seperator-content"></div>
-    
+
                 <div class="content-right flex24gap content-right-padding">
                     <form class="flex8gap" onsubmit="addTask(); return false">
                         <label for="input-date">Due Date<span class="span-star">*</span></label>
@@ -177,7 +178,8 @@
                     </div>
                     <form class="flex8gap" onsubmit="addTask(); return false">
                         <label for="input-category">Category<span class="span-star">*</span></label>
-                        <div class="input-categorie-container input-categorie-container-board" onclick="showCategorie(event, 1)">
+                        <div class="input-categorie-container input-categorie-container-board"
+                            onclick="showCategorie(event, 1)">
                             <input id="input-category" required class="widthInputAddTask">
                             <img class="input-categorie-arrow-down" id="input-categorie-image-down"
                                 src="../assets/img/arrow_drop_down.svg" alt="" onclick="showCategorie(event, 1)">
@@ -190,8 +192,9 @@
                     <div class="flex8gap">
                         <label for="input-subtask">Subtasks</label>
                         <div class="input-container">
-                            <input type="text" id="input-subtask" placeholder="Add new subtask" class="widthInputAddTask"><button class="add-button"
-                                id="add-button-subtask" onclick="addSubTask()">+</button>
+                            <input type="text" id="input-subtask" placeholder="Add new subtask"
+                                class="widthInputAddTask"><button class="add-button" id="add-button-subtask"
+                                onclick="addSubTask()">+</button>
                         </div>
                         <div id="show-subtask" class="show-subtask-board"></div>
                         <span id="error-message-subtasks" class="error-message">please fill in</span>
@@ -199,7 +202,7 @@
                 </div>
             </section>
             <div class="field-required">
-                  <span><span class="span-star">*</span>This field is required</span>
+                <span><span class="span-star">*</span>This field is required</span>
                 <div class="button-footer-addTask">
                     <button class="btn-footer-create btn" onclick="addOrEditTask()">OK
                         <img src="../assets/img/check.svg" alt="">
@@ -208,7 +211,7 @@
             </div>
         </div>
     </section>
-    
+
     <div class="pop-up-task d-none" id="add_task">
         <div class="overlay-create-task" id="overlay-task">
             <p>Task added to Board</p><img src="../assets/img/imgBoard.png">

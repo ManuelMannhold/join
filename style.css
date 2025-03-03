@@ -12,7 +12,7 @@ body {
   overflow: hidden;
 }
 
-.d-none{
+.d-none {
   display: none;
 }
 
@@ -24,58 +24,59 @@ body {
   align-items: center;
 }
 
-
 /*Animation at the beginning*/
 
-  @-webkit-keyframes slide-tl {
-    0% {
-      top: 345px;
-      left: 583px;
-      width: 274px;
-      height: 334.07px;
-      -webkit-transform: translateY(0) translateX(0);
-              transform: translateY(0) translateX(0);
-    }
-    100% {
-      top: 80px;
-      left: 77px;
-      width: 100.03px;
-      height: 121.97px;
-      -webkit-transform: translateY(0) translateX(0);
-              transform: translateY(0) translateX(0);
-    }
-  }
-
-  @keyframes slide-tl {
-    0% {
-      top: 345px;
-      left: 583px;
-      width: 274px;
-      height: 334.07px;
-      -webkit-transform: translateY(0) translateX(0);
-              transform: translateY(0) translateX(0);
-    }
-    100% {
-      top: 80px;
-      left: 77px;
-      width: 100.03px;
-      height: 121.97px;
-      -webkit-transform: translateY(0) translateX(0);
-              transform: translateY(0) translateX(0);
-    }
-  }
-  
-  .animate {
-    display: flex;
-    position: absolute;
-    width: 274px;
-    height: 334.07px;
+@-webkit-keyframes slide-tl {
+  0% {
     top: 345px;
     left: 583px;
-    gap: 0px;
-    transition: transform 200ms ease-in-out, width 200ms ease-in-out, height 200ms ease-in-out, top 200ms ease-in-out, left 200ms ease-in-out;
-    animation: slide-tl 0.4s 0.2s forwards;
+    width: 274px;
+    height: 334.07px;
+    -webkit-transform: translateY(0) translateX(0);
+    transform: translateY(0) translateX(0);
   }
+
+  100% {
+    top: 80px;
+    left: 77px;
+    width: 100.03px;
+    height: 121.97px;
+    -webkit-transform: translateY(0) translateX(0);
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes slide-tl {
+  0% {
+    top: 345px;
+    left: 583px;
+    width: 274px;
+    height: 334.07px;
+    -webkit-transform: translateY(0) translateX(0);
+    transform: translateY(0) translateX(0);
+  }
+
+  100% {
+    top: 80px;
+    left: 77px;
+    width: 100.03px;
+    height: 121.97px;
+    -webkit-transform: translateY(0) translateX(0);
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.animate {
+  display: flex;
+  position: absolute;
+  width: 274px;
+  height: 334.07px;
+  top: 345px;
+  left: 583px;
+  gap: 0px;
+  transition: transform 200ms ease-in-out, width 200ms ease-in-out, height 200ms ease-in-out, top 200ms ease-in-out, left 200ms ease-in-out;
+  animation: slide-tl 0.4s 0.2s forwards;
+}
 
 /*Mainpage*/
 
@@ -302,7 +303,7 @@ input[type="password"].error {
   padding-left: 30px;
 }
 
-.checkboxRemember + .checkboxLabel::before {
+.checkboxRemember+.checkboxLabel::before {
   content: "";
   display: inline-block;
   width: 24px;
@@ -316,17 +317,17 @@ input[type="password"].error {
   cursor: pointer;
 }
 
-.checkboxRemember:not(:checked) + .checkboxLabel:hover::before {
+.checkboxRemember:not(:checked)+.checkboxLabel:hover::before {
   background-image: url("./assets/img/checkboxUncheckedHover.svg");
   cursor: pointer;
 }
 
-.checkboxRemember:checked + .checkboxLabel::before {
+.checkboxRemember:checked+.checkboxLabel::before {
   background-image: url("./assets/img/checkboxChecked.svg");
   cursor: pointer;
 }
 
-.checkboxRemember:checked + .checkboxLabel:hover::before {
+.checkboxRemember:checked+.checkboxLabel:hover::before {
   background-image: url("./assets/img/checkboxCheckedHover.svg");
   cursor: pointer;
 }

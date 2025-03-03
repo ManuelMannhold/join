@@ -1,43 +1,43 @@
-@media(width >= 1400px) {
+@media(width >=1400px) {
     body {
         overflow: hidden;
     }
 }
 
 @media (max-width: 1400px) {
-    .headerFrame{
+    .headerFrame {
         left: calc((100vw - 1207px) / 2);
     }
 
-    .contentFrame{
+    .contentFrame {
         left: calc((100vw - 1207px) / 2);
     }
-    .columnBoard{
+
+    .columnBoard {
         max-height: calc(100vh - 410px);
     }
 }
 
-@media (min-width: 1201px)
-{
-    #searchMobil{
+@media (min-width: 1201px) {
+    #searchMobil {
         display: none;
     }
 
-    #addTaskMobil{
+    #addTaskMobil {
         display: none;
     }
 
-    .mobilBoardTaskTitles{
+    .mobilBoardTaskTitles {
         display: none;
     }
 }
 
-@media (max-width: 1200px){
-    .width440{
+@media (max-width: 1200px) {
+    .width440 {
         width: 240px;
     }
-    
-    .contentFrame{
+
+    .contentFrame {
         display: flex;
         flex-direction: column;
         overflow-y: auto;
@@ -49,8 +49,7 @@
         scrollbar-width: none;
     }
 
-    .columnBoard{
-        /* white-space: nowrap; */
+    .columnBoard {
         padding-bottom: 20px;
         height: auto;
         overflow-y: hidden;
@@ -60,65 +59,64 @@
         margin-bottom: 8px;
     }
 
-    .headerFrame{
+    .headerFrame {
         width: calc(100vw - 32px);
         padding: 0px 16px 0px 16px;
         left: 0;
     }
 
-    .titleSearch{
+    .titleSearch {
         width: calc(100vw - 32px);
         padding: 0px 16px 0px 16px;
         left: 0;
         top: calc(128px - 80px);
     }
 
-    .headersTable{
+    .headersTable {
         display: none;
     }
 
-    #searchMobil{
+    #searchMobil {
         display: block;
     }
 
-    #searchDesktop{
+    #searchDesktop {
         display: none;
     }
 
-    #searchMobil{
+    #searchMobil {
         position: relative;
         left: 16px;
         top: calc(224px - 80px - 73px);
         width: 396px;
     }
 
-    .formSearch{
+    .formSearch {
         width: 364px;
     }
 
-    #addTaskMobil{
+    #addTaskMobil {
         display: block;
     }
 
-    #addTaskDesktop{
+    #addTaskDesktop {
         display: none;
     }
 
-    .addTask{
+    .addTask {
         width: 40px;
         height: 40px;
         padding: 3px;
     }
 
-    .mobilBoardTaskTitles{
+    .mobilBoardTaskTitles {
         display: flex !important;
         padding-left: 16px;
-        /* width: 396px; */
     }
 }
 
 @media (max-width: 780px) {
-    .detailCardTaskToDo{
+    .detailCardTaskToDo {
         width: 396px;
         padding: 32px 24px 32px 24px;
         gap: 16px;
@@ -186,16 +184,16 @@
     }
 }
 
-@media (max-width: 459px){
-    #searchMobil{
+@media (max-width: 459px) {
+    #searchMobil {
         width: 240px;
     }
 
-    .inputSearch{
+    .inputSearch {
         width: 170px;
     }
 
-    .formSearch{
+    .formSearch {
         width: auto;
     }
 
@@ -212,7 +210,7 @@
         font-size: 30px;
     }
 
-    .textDetailCardContent{
+    .textDetailCardContent {
         width: 220px;
     }
 
@@ -228,14 +226,14 @@
     .contactsDetailCard {
         width: 200px;
     }
-    
-    .contactsListCard{
+
+    .contactsListCard {
         width: 200px;
     }
 }
 
-@media (max-width: 330px){
-    .TasksToDo{
+@media (max-width: 330px) {
+    .TasksToDo {
         width: 240px;
     }
 }

@@ -1,5 +1,3 @@
-/*Media query*/
-
 @media (max-width: 1200px) {
   .signupContainer {
     left: calc((100vw - 598px) / 2);
@@ -10,10 +8,7 @@
   }
 }
 
-/*Media query*/
-
-@media (max-width: 980px)
-{
+@media (max-width: 980px) {
   .logoSignupPage {
     width: 64px;
     height: 78.03px;
@@ -109,6 +104,7 @@
     from {
       bottom: -550px;
     }
+
     to {
       bottom: -140px;
     }
@@ -129,8 +125,6 @@
     width: 280px;
   }
 }
-
-/*Media query*/
 
 @media (max-width: 428px) {
   .logoSignupPage {
@@ -244,14 +238,13 @@
   }
 }
 
-/*Media query*/
-
 @media(max-height: 820px) {
   .legalButtonsContainerSignup {
     margin-top: 0;
   }
+
   .signupContainer {
     padding: 10px;
-        margin-top: 70px;
+    margin-top: 70px;
   }
 }

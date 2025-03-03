@@ -1,108 +1,105 @@
-@media (min-width: 1400px)
-{
+@media (min-width: 1400px) {
     .container-board-addTask {
         right: auto;
         overflow-y: auto;
         top: unset;
         scrollbar-width: none;
-     }
+    }
 
-     .fiel-required{
+    .fiel-required {
         margin-top: 24px;
-     }
+    }
 }
 
-@media(max-height: 900px)
-{
+@media(max-height: 900px) {
     .container-board-addTask {
         max-height: calc(100vh - 100px);
     }
 }
 
- @media(max-width: 1400px) {
-     .container-board-addTask {
+@media(max-width: 1400px) {
+    .container-board-addTask {
         right: auto;
         top: unset;
         scrollbar-width: none;
         overflow-y: auto;
-     }
+    }
 
-     .containerDetailCard {
+    .containerDetailCard {
         height: 100vh;
-     }
+    }
 
-     #content-addTask{
+    #content-addTask {
         overflow-x: hidden;
         scrollbar-width: none;
-     }
+    }
 
-     .fiel-required {
+    .fiel-required {
         margin-top: 24px;
         margin-bottom: 8px;
-     }
- }
+    }
+}
 
 @media(max-width: 1200px) {
     .container-board-addTask {
         width: fit-content;
     }
 
-    input{
+    input {
         width: auto;
     }
 
-    .content-right{
+    .content-right {
         margin-left: 0px;
         margin-right: 40px;
         width: 410px;
     }
 
-    .content-left{
+    .content-left {
         width: 410px;
         margin-left: 40px;
     }
 
-    #input-description{
+    #input-description {
         max-width: none;
         min-width: none;
     }
 
-    #input-assigny{
+    #input-assigny {
         width: -webkit-fill-available;
     }
 
-    #show-contacts{
+    #show-contacts {
         width: -webkit-fill-available;
         min-width: none;
         max-width: none;
     }
 
-    #input-category{
-        width: -webkit-fill-available;
-        /* max-width: 440px; */
-    }
-
-    #display-categorie{
+    #input-category {
         width: -webkit-fill-available;
     }
 
-    #input-subtask{
+    #display-categorie {
+        width: -webkit-fill-available;
+    }
+
+    #input-subtask {
         width: -webkit-fill-available;
     }
 
     #content-addTask {
         gap: 20px;
     }
-    
+
 }
 
 @media(max-width: 700px) {
 
-    .content-right{
+    .content-right {
         width: 300px;
     }
 
-    .content-left{
+    .content-left {
         width: 300px;
     }
 
@@ -116,19 +113,19 @@
         gap: 0;
     }
 
-    .content-right{
+    .content-right {
         width: 280px;
     }
 
-    .content-left{
+    .content-left {
         width: 280px;
     }
 
-    .headline{
+    .headline {
         width: 300px;
     }
 
-    .header-addTask{
+    .header-addTask {
         padding-top: 20px;
     }
 
@@ -136,7 +133,7 @@
         margin-right: 20px;
     }
 
-    .headline{
+    .headline {
         font-size: 40px;
     }
 
@@ -144,7 +141,7 @@
         gap: 8px;
     }
 
-    .container-board-addTask{
+    .container-board-addTask {
         height: fit-content;
         padding-bottom: 20px;
     }
@@ -156,33 +153,33 @@
 }
 
 @media(max-width: 500px) {
-    .content-right{
+    .content-right {
         width: 200px;
         margin-right: 0;
         margin-left: 20px;
     }
 
     .content-right {
-        margin-left: 20px;}
-    
+        margin-left: 20px;
+    }
 
-    .content-left{
+
+    .content-left {
         width: 200px;
         margin-left: 20px;
     }
 
-    .headline{
+    .headline {
         width: 220px;
     }
 
-    .header-addTask{
+    .header-addTask {
         padding-left: 20px;
     }
 
     #input-title,
     #input-date,
-    #input-description
-     {
+    #input-description {
         width: 100%;
     }
 }
@@ -193,7 +190,6 @@
         display: flex;
         flex-direction: column;
         overflow-y: auto;
-        /* height: 440px; */
     }
 
     .content-right {
@@ -201,87 +197,86 @@
     }
 
     .seperator {
-         display: none;
-     }
+        display: none;
+    }
 
-     .input-prio-span {
-         display: flex;
-     }
+    .input-prio-span {
+        display: flex;
+    }
 
-     .input-container-contacts {
-         align-items: flex-start;
-         min-width: 170px;
-     }
+    .input-container-contacts {
+        align-items: flex-start;
+        min-width: 170px;
+    }
 
-     #show-contacts {
-         min-width: 170px;
-         max-width: 100%;
-     }
+    #show-contacts {
+        min-width: 170px;
+        max-width: 100%;
+    }
 
-     .display-contacts-dropdown {
-         width: 100%;
-     }
+    .display-contacts-dropdown {
+        width: 100%;
+    }
 
-     #input-description {
-         min-width: 170px;
-     }
+    #input-description {
+        min-width: 170px;
+    }
 
-     #display-categorie {
-         width: 55%;
-     }
- }
+    #display-categorie {
+        width: 55%;
+    }
+}
 
- @media(max-width: 640px) {
-     .input-prio-span {
-         display: flex;
-         flex-direction: column;
-     }
+@media(max-width: 640px) {
+    .input-prio-span {
+        display: flex;
+        flex-direction: column;
+    }
 
-     .fiel-required{
+    .fiel-required {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 10px;
     }
- }
+}
 
- @media(max-width: 540px) {
-     #content-addTask {
-         display: flex;
-     }
+@media(max-width: 540px) {
+    #content-addTask {
+        display: flex;
+    }
 
     .button-footer-addTask {
-         flex-direction: column;
-     }
- }
+        flex-direction: column;
+    }
+}
 
- @media(max-width: 1070px)
-{
-    .widthInputAddTask{
+@media(max-width: 1070px) {
+    .widthInputAddTask {
         width: calc(624px - 70px);
     }
 
-    #input-assigny{
+    #input-assigny {
         width: calc(624px - 70px);
     }
 
-    .content-right{
+    .content-right {
         margin-left: 40px;
     }
 
-    #input-date{
+    #input-date {
         width: calc(624px - 70px);
     }
 
-    #input-category{
+    #input-category {
         width: calc(624px - 70px);
     }
 
-    #input-subtask{
+    #input-subtask {
         width: calc(624px - 70px);
     }
 
-    #show-subtask{
+    #show-subtask {
         width: calc(624px - 70px);
     }
 
@@ -289,23 +284,23 @@
         width: calc(624px - 70px);
     }
 
-    .input-categorie-container{
+    .input-categorie-container {
         width: calc(624px - 70px);
     }
 
-    .input-container-contacts{
+    .input-container-contacts {
         width: calc(624px - 70px);
     }
 
-    .input-container{
+    .input-container {
         width: calc(624px - 70px);
     }
 
 
     .input-container {
-        display: block; 
-        flex-direction: unset; 
-        align-items: unset; 
+        display: block;
+        flex-direction: unset;
+        align-items: unset;
         position: relative;
     }
 
@@ -313,38 +308,37 @@
         max-height: calc(100vh - 100px);
     }
 
-    #content-addTask{
+    #content-addTask {
         max-height: calc(100vh - 360px);
     }
 }
 
-@media(max-width: 700px)
-{
-    .widthInputAddTask{
+@media(max-width: 700px) {
+    .widthInputAddTask {
         width: calc(624px - 120px);
     }
 
-    #input-assigny{
+    #input-assigny {
         width: calc(624px - 120px);
     }
 
-    #show-subtask{
+    #show-subtask {
         width: calc(624px - 120px);
     }
 
-    #input-date{
+    #input-date {
         width: calc(624px - 120px);
     }
 
-    #input-category{
+    #input-category {
         width: calc(624px - 120px);
     }
 
-    #input-subtask{
+    #input-subtask {
         width: calc(624px - 120px);
     }
 
-    .input-prio-span{
+    .input-prio-span {
         align-items: center;
         width: calc(624px - 120px);
     }
@@ -353,58 +347,57 @@
         width: calc(624px - 120px);
     }
 
-    .input-categorie-container{
+    .input-categorie-container {
         width: calc(624px - 120px);
     }
 
-    .input-container-contacts{
+    .input-container-contacts {
         width: calc(624px - 120px);
     }
 
-    .input-container{
+    .input-container {
         width: calc(624px - 120px);
     }
-    
-    #content-addTask{
+
+    #content-addTask {
         max-height: calc(100vh - 360px);
     }
 }
 
-@media(max-width: 640px)
-{
-    .content-left{
+@media(max-width: 640px) {
+    .content-left {
         margin-left: 20px;
     }
 
-    .content-right{
+    .content-right {
         margin-left: 20px;
     }
 
-    .widthInputAddTask{
+    .widthInputAddTask {
         width: calc(624px - 310px);
     }
 
-    #input-assigny{
+    #input-assigny {
         width: calc(624px - 310px);
     }
 
-    #input-date{
+    #input-date {
         width: calc(624px - 310px);
     }
 
-    #show-subtask{
+    #show-subtask {
         width: calc(624px - 310px);
     }
 
-    #input-category{
+    #input-category {
         width: calc(624px - 310px);
     }
 
-    #input-subtask{
+    #input-subtask {
         width: calc(624px - 310px);
     }
 
-    .input-prio-span{
+    .input-prio-span {
         align-items: center;
         width: calc(624px - 310px);
     }
@@ -413,70 +406,69 @@
         width: calc(624px - 310px);
     }
 
-    .input-categorie-container{
+    .input-categorie-container {
         width: calc(624px - 310px);
     }
 
-    .input-container-contacts{
+    .input-container-contacts {
         width: calc(624px - 310px);
     }
 
-    .input-container{
+    .input-container {
         width: calc(624px - 310px);
     }
 
-    #content-addTask{
+    #content-addTask {
         max-height: calc(100vh - 120px - 200px);
     }
 }
 
-@media(max-width: 500px)
-{
+@media(max-width: 500px) {
     .widthInputAddTask {
         width: calc(624px - 390px);
     }
 
-    #input-title{
+    #input-title {
         width: calc(624px - 390px);
     }
 
-    #input-description{
+    #input-description {
         width: calc(624px - 390px);
     }
 
-    #input-assigny{
+    #input-assigny {
         width: calc(624px - 390px);
     }
 
-    #show-subtask{
+    #show-subtask {
         width: calc(624px - 390px);
     }
 
-    #input-date{
+    #input-date {
         width: calc(624px - 390px);
     }
 
-    #input-category{
+    #input-category {
         width: calc(624px - 390px);
     }
 
-    .input-categorie-container{
+    .input-categorie-container {
         width: calc(624px - 390px);
     }
 
-    .input-container-contacts{
+    .input-container-contacts {
         width: calc(624px - 390px);
     }
 
-    .input-container{
+    .input-container {
         width: calc(624px - 390px);
     }
 
-    #input-subtask{
+    #input-subtask {
         width: calc(624px - 390px);
     }
 
-    .input-prio-span{
+    .input-prio-span {
         width: calc(624px - 390px);
     }
 
@@ -484,7 +476,7 @@
         width: calc(624px - 390px);
     }
 
-    #content-addTask{
+    #content-addTask {
         max-height: calc(100vh - 120px - 200px);
     }
 }
