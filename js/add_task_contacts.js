@@ -165,7 +165,6 @@ function showContacts() {
  * @param {number} i - The index of the contact in the contacts array.
  */
 function updateCheckbox(i) {
-  console.log(contacts);
   let idcheckbox = "checkbox-contacts" + i;
   const isAlreadySelected = contactChoose.some(
     (contact) => contact.id === contacts[i].id
